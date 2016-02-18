@@ -1,0 +1,478 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2726A8E11B98FE3D00C4D522 /* CarExplosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2726A8DF1B98FE3D00C4D522 /* CarExplosion.sks */; };
+		2726A8E21B98FE3D00C4D522 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 2726A8E01B98FE3D00C4D522 /* spark.png */; };
+		274EE61D1BCBAFFC008C8918 /* BoostersNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274EE61C1BCBAFFC008C8918 /* BoostersNode.swift */; };
+		274EE61F1BCBB5F3008C8918 /* shield.png in Resources */ = {isa = PBXBuildFile; fileRef = 274EE61E1BCBB5F3008C8918 /* shield.png */; };
+		2B44CAF21BAC56D700751768 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B44CAF11BAC56D700751768 /* play.png */; };
+		2B44CAF61BAC56E400751768 /* load.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B44CAF31BAC56E400751768 /* load.png */; };
+		2B44CAF71BAC56E400751768 /* bolt.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B44CAF41BAC56E400751768 /* bolt.png */; };
+		2B44CAF81BAC56E400751768 /* shop.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B44CAF51BAC56E400751768 /* shop.png */; };
+		2B5541C21B949B510078DA09 /* beetle.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B5541C11B949B510078DA09 /* beetle.png */; };
+		2B5541C71B949B5A0078DA09 /* pickup.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B5541C31B949B5A0078DA09 /* pickup.png */; };
+		2B5541C81B949B5A0078DA09 /* police.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B5541C41B949B5A0078DA09 /* police.png */; };
+		2B5541C91B949B5A0078DA09 /* sedan.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B5541C51B949B5A0078DA09 /* sedan.png */; };
+		2B5541CA1B949B5A0078DA09 /* truck.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B5541C61B949B5A0078DA09 /* truck.png */; };
+		2B5541D01B94B96A0078DA09 /* bg1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B5541CF1B94B96A0078DA09 /* bg1.png */; };
+		2B5F2D7B1BA2DDC900F436C1 /* icon_app_store.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B5F2D781BA2DDC900F436C1 /* icon_app_store.png */; };
+		2B5F2D7C1BA2DDC900F436C1 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B5F2D791BA2DDC900F436C1 /* icon@2x.png */; };
+		2B5F2D7D1BA2DDC900F436C1 /* icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B5F2D7A1BA2DDC900F436C1 /* icon@3x.png */; };
+		2B5F2D821BA2DDD800F436C1 /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B5F2D7E1BA2DDD800F436C1 /* launch.png */; };
+		2B5F2D831BA2DDD800F436C1 /* launch4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B5F2D7F1BA2DDD800F436C1 /* launch4@2x.png */; };
+		2B5F2D841BA2DDD800F436C1 /* launch5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B5F2D801BA2DDD800F436C1 /* launch5@2x.png */; };
+		2B5F2D851BA2DDD800F436C1 /* main.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B5F2D811BA2DDD800F436C1 /* main.png */; };
+		2B7989571BB005D700E3219A /* BackgroundNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7989561BB005D700E3219A /* BackgroundNode.swift */; };
+		2B7989591BB015F600E3219A /* LabelsNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7989581BB015F600E3219A /* LabelsNode.swift */; };
+		2B79895B1BB0392500E3219A /* ButtonShopNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B79895A1BB0392500E3219A /* ButtonShopNode.swift */; };
+		2B9B9ED21BB584DF0081556B /* ProgressNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9B9ED11BB584DF0081556B /* ProgressNode.swift */; };
+		2B9E18361B909A0A00F7F9D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9E18351B909A0A00F7F9D3 /* AppDelegate.swift */; };
+		2B9E183A1B909A0A00F7F9D3 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9E18391B909A0A00F7F9D3 /* GameScene.swift */; };
+		2B9E183C1B909A0A00F7F9D3 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9E183B1B909A0A00F7F9D3 /* GameViewController.swift */; };
+		2B9E183F1B909A0A00F7F9D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B9E183D1B909A0A00F7F9D3 /* Main.storyboard */; };
+		2B9E18411B909A0A00F7F9D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B9E18401B909A0A00F7F9D3 /* Assets.xcassets */; };
+		2B9E18441B909A0A00F7F9D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B9E18421B909A0A00F7F9D3 /* LaunchScreen.storyboard */; };
+		2B9E18511B90B33800F7F9D3 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B9E18501B90B33800F7F9D3 /* bg.png */; };
+		2B9E18531B90C33300F7F9D3 /* car.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B9E18521B90C33300F7F9D3 /* car.png */; };
+		2BB534971BB1472600374E2A /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB534961BB1472600374E2A /* Util.swift */; };
+		2BB534991BB1938E00374E2A /* hud.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BB534981BB1938E00374E2A /* hud.png */; };
+		2BB5349B1BB1939700374E2A /* layer.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BB5349A1BB1939700374E2A /* layer.png */; };
+		2BB5349D1BB1945B00374E2A /* HUDNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB5349C1BB1945B00374E2A /* HUDNode.swift */; };
+		2BB5349F1BB19E1E00374E2A /* ButtonBoltNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB5349E1BB19E1E00374E2A /* ButtonBoltNode.swift */; };
+		2BB534A31BB1A66300374E2A /* CarNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB534A21BB1A66300374E2A /* CarNode.swift */; };
+		2BB534A51BB1BB0400374E2A /* GameStartNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB534A41BB1BB0400374E2A /* GameStartNode.swift */; };
+		2BB534A71BB1BB1B00374E2A /* GameOverNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB534A61BB1BB1B00374E2A /* GameOverNode.swift */; };
+		2BCFABC21BB2F22E00B28D37 /* OtherCarNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCFABC11BB2F22E00B28D37 /* OtherCarNode.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2726A8DF1B98FE3D00C4D522 /* CarExplosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CarExplosion.sks; sourceTree = "<group>"; };
+		2726A8E01B98FE3D00C4D522 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		274EE61C1BCBAFFC008C8918 /* BoostersNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoostersNode.swift; sourceTree = "<group>"; };
+		274EE61E1BCBB5F3008C8918 /* shield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shield.png; sourceTree = "<group>"; };
+		2B44CAF11BAC56D700751768 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		2B44CAF31BAC56E400751768 /* load.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = load.png; sourceTree = "<group>"; };
+		2B44CAF41BAC56E400751768 /* bolt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bolt.png; sourceTree = "<group>"; };
+		2B44CAF51BAC56E400751768 /* shop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shop.png; sourceTree = "<group>"; };
+		2B5541C11B949B510078DA09 /* beetle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beetle.png; sourceTree = "<group>"; };
+		2B5541C31B949B5A0078DA09 /* pickup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pickup.png; sourceTree = "<group>"; };
+		2B5541C41B949B5A0078DA09 /* police.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = police.png; sourceTree = "<group>"; };
+		2B5541C51B949B5A0078DA09 /* sedan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sedan.png; sourceTree = "<group>"; };
+		2B5541C61B949B5A0078DA09 /* truck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = truck.png; sourceTree = "<group>"; };
+		2B5541CF1B94B96A0078DA09 /* bg1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg1.png; sourceTree = "<group>"; };
+		2B5F2D781BA2DDC900F436C1 /* icon_app_store.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_app_store.png; sourceTree = "<group>"; };
+		2B5F2D791BA2DDC900F436C1 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		2B5F2D7A1BA2DDC900F436C1 /* icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@3x.png"; sourceTree = "<group>"; };
+		2B5F2D7E1BA2DDD800F436C1 /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch.png; sourceTree = "<group>"; };
+		2B5F2D7F1BA2DDD800F436C1 /* launch4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch4@2x.png"; sourceTree = "<group>"; };
+		2B5F2D801BA2DDD800F436C1 /* launch5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch5@2x.png"; sourceTree = "<group>"; };
+		2B5F2D811BA2DDD800F436C1 /* main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main.png; sourceTree = "<group>"; };
+		2B7989561BB005D700E3219A /* BackgroundNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundNode.swift; sourceTree = "<group>"; };
+		2B7989581BB015F600E3219A /* LabelsNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelsNode.swift; sourceTree = "<group>"; };
+		2B79895A1BB0392500E3219A /* ButtonShopNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonShopNode.swift; sourceTree = "<group>"; };
+		2B9B9ED11BB584DF0081556B /* ProgressNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressNode.swift; sourceTree = "<group>"; };
+		2B9E18321B909A0A00F7F9D3 /* Crazy Speed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crazy Speed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B9E18351B909A0A00F7F9D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2B9E18391B909A0A00F7F9D3 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		2B9E183B1B909A0A00F7F9D3 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		2B9E183E1B909A0A00F7F9D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2B9E18401B909A0A00F7F9D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2B9E18431B909A0A00F7F9D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2B9E18451B909A0A00F7F9D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B9E18501B90B33800F7F9D3 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		2B9E18521B90C33300F7F9D3 /* car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car.png; sourceTree = "<group>"; };
+		2BB534961BB1472600374E2A /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		2BB534981BB1938E00374E2A /* hud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hud.png; sourceTree = "<group>"; };
+		2BB5349A1BB1939700374E2A /* layer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = layer.png; sourceTree = "<group>"; };
+		2BB5349C1BB1945B00374E2A /* HUDNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDNode.swift; sourceTree = "<group>"; };
+		2BB5349E1BB19E1E00374E2A /* ButtonBoltNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonBoltNode.swift; sourceTree = "<group>"; };
+		2BB534A21BB1A66300374E2A /* CarNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarNode.swift; sourceTree = "<group>"; };
+		2BB534A41BB1BB0400374E2A /* GameStartNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameStartNode.swift; sourceTree = "<group>"; };
+		2BB534A61BB1BB1B00374E2A /* GameOverNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverNode.swift; sourceTree = "<group>"; };
+		2BCFABC11BB2F22E00B28D37 /* OtherCarNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherCarNode.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2B9E182F1B909A0A00F7F9D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2B9E18291B909A0A00F7F9D3 = {
+			isa = PBXGroup;
+			children = (
+				2B9E18341B909A0A00F7F9D3 /* Crazy Speed */,
+				2B9E18331B909A0A00F7F9D3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2B9E18331B909A0A00F7F9D3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2B9E18321B909A0A00F7F9D3 /* Crazy Speed.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2B9E18341B909A0A00F7F9D3 /* Crazy Speed */ = {
+			isa = PBXGroup;
+			children = (
+				2BB534AA1BB1BC2600374E2A /* Particle */,
+				2BB534A91BB1BBD200374E2A /* Node */,
+				2BB534A81BB1BBC200374E2A /* Scene */,
+				2B9E184D1B909AC300F7F9D3 /* Res */,
+				2B9E18351B909A0A00F7F9D3 /* AppDelegate.swift */,
+				2B9E183B1B909A0A00F7F9D3 /* GameViewController.swift */,
+				2BB534961BB1472600374E2A /* Util.swift */,
+				2B9E183D1B909A0A00F7F9D3 /* Main.storyboard */,
+				2B9E18401B909A0A00F7F9D3 /* Assets.xcassets */,
+				2B9E18421B909A0A00F7F9D3 /* LaunchScreen.storyboard */,
+				2B9E18451B909A0A00F7F9D3 /* Info.plist */,
+			);
+			path = "Crazy Speed";
+			sourceTree = "<group>";
+		};
+		2B9E184D1B909AC300F7F9D3 /* Res */ = {
+			isa = PBXGroup;
+			children = (
+				274EE61E1BCBB5F3008C8918 /* shield.png */,
+				2726A8E01B98FE3D00C4D522 /* spark.png */,
+				2BB5349A1BB1939700374E2A /* layer.png */,
+				2BB534981BB1938E00374E2A /* hud.png */,
+				2B44CAF31BAC56E400751768 /* load.png */,
+				2B44CAF41BAC56E400751768 /* bolt.png */,
+				2B44CAF51BAC56E400751768 /* shop.png */,
+				2B44CAF11BAC56D700751768 /* play.png */,
+				2B5F2D7E1BA2DDD800F436C1 /* launch.png */,
+				2B5F2D7F1BA2DDD800F436C1 /* launch4@2x.png */,
+				2B5F2D801BA2DDD800F436C1 /* launch5@2x.png */,
+				2B5F2D811BA2DDD800F436C1 /* main.png */,
+				2B5F2D781BA2DDC900F436C1 /* icon_app_store.png */,
+				2B5F2D791BA2DDC900F436C1 /* icon@2x.png */,
+				2B5F2D7A1BA2DDC900F436C1 /* icon@3x.png */,
+				2B9E18501B90B33800F7F9D3 /* bg.png */,
+				2B5541CF1B94B96A0078DA09 /* bg1.png */,
+				2B9E18521B90C33300F7F9D3 /* car.png */,
+				2B5541C31B949B5A0078DA09 /* pickup.png */,
+				2B5541C41B949B5A0078DA09 /* police.png */,
+				2B5541C51B949B5A0078DA09 /* sedan.png */,
+				2B5541C61B949B5A0078DA09 /* truck.png */,
+				2B5541C11B949B510078DA09 /* beetle.png */,
+			);
+			name = Res;
+			sourceTree = "<group>";
+		};
+		2BB534A81BB1BBC200374E2A /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				2B9E18391B909A0A00F7F9D3 /* GameScene.swift */,
+			);
+			name = Scene;
+			sourceTree = "<group>";
+		};
+		2BB534A91BB1BBD200374E2A /* Node */ = {
+			isa = PBXGroup;
+			children = (
+				2B7989561BB005D700E3219A /* BackgroundNode.swift */,
+				2BB5349C1BB1945B00374E2A /* HUDNode.swift */,
+				2B7989581BB015F600E3219A /* LabelsNode.swift */,
+				2BB5349E1BB19E1E00374E2A /* ButtonBoltNode.swift */,
+				2B79895A1BB0392500E3219A /* ButtonShopNode.swift */,
+				274EE61C1BCBAFFC008C8918 /* BoostersNode.swift */,
+				2BB534A21BB1A66300374E2A /* CarNode.swift */,
+				2BCFABC11BB2F22E00B28D37 /* OtherCarNode.swift */,
+				2BB534A41BB1BB0400374E2A /* GameStartNode.swift */,
+				2BB534A61BB1BB1B00374E2A /* GameOverNode.swift */,
+				2B9B9ED11BB584DF0081556B /* ProgressNode.swift */,
+			);
+			name = Node;
+			sourceTree = "<group>";
+		};
+		2BB534AA1BB1BC2600374E2A /* Particle */ = {
+			isa = PBXGroup;
+			children = (
+				2726A8DF1B98FE3D00C4D522 /* CarExplosion.sks */,
+			);
+			name = Particle;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2B9E18311B909A0A00F7F9D3 /* Crazy Speed */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B9E18481B909A0A00F7F9D3 /* Build configuration list for PBXNativeTarget "Crazy Speed" */;
+			buildPhases = (
+				2B9E182E1B909A0A00F7F9D3 /* Sources */,
+				2B9E182F1B909A0A00F7F9D3 /* Frameworks */,
+				2B9E18301B909A0A00F7F9D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Crazy Speed";
+			productName = "Crazy Speed";
+			productReference = 2B9E18321B909A0A00F7F9D3 /* Crazy Speed.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2B9E182A1B909A0A00F7F9D3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = EGR;
+				TargetAttributes = {
+					2B9E18311B909A0A00F7F9D3 = {
+						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = A4E4C3MHCH;
+					};
+				};
+			};
+			buildConfigurationList = 2B9E182D1B909A0A00F7F9D3 /* Build configuration list for PBXProject "Crazy Speed" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2B9E18291B909A0A00F7F9D3;
+			productRefGroup = 2B9E18331B909A0A00F7F9D3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2B9E18311B909A0A00F7F9D3 /* Crazy Speed */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2B9E18301B909A0A00F7F9D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B5541D01B94B96A0078DA09 /* bg1.png in Resources */,
+				2B5F2D7C1BA2DDC900F436C1 /* icon@2x.png in Resources */,
+				2B5F2D7D1BA2DDC900F436C1 /* icon@3x.png in Resources */,
+				2726A8E11B98FE3D00C4D522 /* CarExplosion.sks in Resources */,
+				2B44CAF71BAC56E400751768 /* bolt.png in Resources */,
+				2B9E18531B90C33300F7F9D3 /* car.png in Resources */,
+				2726A8E21B98FE3D00C4D522 /* spark.png in Resources */,
+				2B5541C81B949B5A0078DA09 /* police.png in Resources */,
+				2B44CAF21BAC56D700751768 /* play.png in Resources */,
+				274EE61F1BCBB5F3008C8918 /* shield.png in Resources */,
+				2B5F2D851BA2DDD800F436C1 /* main.png in Resources */,
+				2B9E18511B90B33800F7F9D3 /* bg.png in Resources */,
+				2B9E18441B909A0A00F7F9D3 /* LaunchScreen.storyboard in Resources */,
+				2B5F2D831BA2DDD800F436C1 /* launch4@2x.png in Resources */,
+				2B5F2D841BA2DDD800F436C1 /* launch5@2x.png in Resources */,
+				2B5541CA1B949B5A0078DA09 /* truck.png in Resources */,
+				2B5541C91B949B5A0078DA09 /* sedan.png in Resources */,
+				2B44CAF81BAC56E400751768 /* shop.png in Resources */,
+				2B5F2D821BA2DDD800F436C1 /* launch.png in Resources */,
+				2B9E18411B909A0A00F7F9D3 /* Assets.xcassets in Resources */,
+				2B5541C71B949B5A0078DA09 /* pickup.png in Resources */,
+				2B5541C21B949B510078DA09 /* beetle.png in Resources */,
+				2B9E183F1B909A0A00F7F9D3 /* Main.storyboard in Resources */,
+				2B44CAF61BAC56E400751768 /* load.png in Resources */,
+				2BB534991BB1938E00374E2A /* hud.png in Resources */,
+				2B5F2D7B1BA2DDC900F436C1 /* icon_app_store.png in Resources */,
+				2BB5349B1BB1939700374E2A /* layer.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2B9E182E1B909A0A00F7F9D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B9E183A1B909A0A00F7F9D3 /* GameScene.swift in Sources */,
+				2B79895B1BB0392500E3219A /* ButtonShopNode.swift in Sources */,
+				2BB534A31BB1A66300374E2A /* CarNode.swift in Sources */,
+				2B7989571BB005D700E3219A /* BackgroundNode.swift in Sources */,
+				274EE61D1BCBAFFC008C8918 /* BoostersNode.swift in Sources */,
+				2B7989591BB015F600E3219A /* LabelsNode.swift in Sources */,
+				2BB534A71BB1BB1B00374E2A /* GameOverNode.swift in Sources */,
+				2BB534971BB1472600374E2A /* Util.swift in Sources */,
+				2BCFABC21BB2F22E00B28D37 /* OtherCarNode.swift in Sources */,
+				2B9B9ED21BB584DF0081556B /* ProgressNode.swift in Sources */,
+				2B9E183C1B909A0A00F7F9D3 /* GameViewController.swift in Sources */,
+				2B9E18361B909A0A00F7F9D3 /* AppDelegate.swift in Sources */,
+				2BB534A51BB1BB0400374E2A /* GameStartNode.swift in Sources */,
+				2BB5349F1BB19E1E00374E2A /* ButtonBoltNode.swift in Sources */,
+				2BB5349D1BB1945B00374E2A /* HUDNode.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2B9E183D1B909A0A00F7F9D3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2B9E183E1B909A0A00F7F9D3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2B9E18421B909A0A00F7F9D3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2B9E18431B909A0A00F7F9D3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2B9E18461B909A0A00F7F9D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2B9E18471B909A0A00F7F9D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2B9E18491B909A0A00F7F9D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Crazy Speed/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fergargames.crazyspeed;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2B9E184A1B909A0A00F7F9D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Crazy Speed/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fergargames.crazyspeed;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2B9E182D1B909A0A00F7F9D3 /* Build configuration list for PBXProject "Crazy Speed" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B9E18461B909A0A00F7F9D3 /* Debug */,
+				2B9E18471B909A0A00F7F9D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2B9E18481B909A0A00F7F9D3 /* Build configuration list for PBXNativeTarget "Crazy Speed" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B9E18491B909A0A00F7F9D3 /* Debug */,
+				2B9E184A1B909A0A00F7F9D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2B9E182A1B909A0A00F7F9D3 /* Project object */;
+}
