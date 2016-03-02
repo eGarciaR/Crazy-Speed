@@ -120,7 +120,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         addLife()
         
-        if isStarted {
+        if isStarted && (!paused){
             background?.move()
             addCar(currentTime)
             updateCarTimeInterval(currentTime)
@@ -130,7 +130,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 boosterTime = 0
                 turnOffShieldProtection()
             }
-            if shotGunUp && boosterTime >= 75{
+            if shotGunUp && boosterTime >= 37{ // boosterTime va en función del timeInterval
                 boosterTime = 0
                 turnOffShotGun()
             }
@@ -324,7 +324,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func setupShotsGun() {
         shotGunUp = true
         boosterTime = 0
-        timerShotGun = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: Selector("countdown"), userInfo: nil, repeats: true)
+        timerShotGun = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("countdown"), userInfo: nil, repeats: true)
     }
     
     func createShotGunNode() {
@@ -373,18 +373,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func pause() {
         self.paused = true
         didTheGamePaused = true
-        
+        if shotGunUp {timerShotGun.invalidate()} // Si el juego se pausa, hay que parar el timer del shot gun
         boosters?.show()
     }
     
     func resume() {
         self.paused = false
-        
+        if shotGunUp {
+            timerShotGun.invalidate() // Invalidamos el tiempo para parar todos los timers, para ser más precisos habría que crear una varible en el pause() que almacene el valor del tiempo para después volver a continuar desde el mismo tiempo.
+            timerShotGun = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("countdown"), userInfo: nil, repeats: true)
+        } // Si el juego se reanuda, hay que reinicializar el timer
         boosters?.hide()
     }
     
     func isGameOver() {
         isStarted = false
+        timerShotGun.invalidate()
         
         lifes--
         labels?.updateLifes(lifes)

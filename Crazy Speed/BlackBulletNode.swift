@@ -16,7 +16,7 @@ class BlackBulletNode: SKSpriteNode {
         
         self.name = "BlackBullet"
         self.position = position
-        self.setScale(0.20)
+        self.setScale(0.50)
         self.zPosition = 3
         
     }
