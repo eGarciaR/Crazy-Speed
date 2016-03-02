@@ -4,6 +4,7 @@ let userDefaults = NSUserDefaults.standardUserDefaults()
 
 let kCCOtherCarsCategory : UInt32 = 0x1 << 0
 let kCCOurCarCategory : UInt32 = 0x1 << 1
+let kCCBulletCategory : UInt32 = 0x1 << 2
 
 let imageVector = ["pickup", "police", "sedan", "truck", "beetle"]
 let font = "Damascus"

@@ -31,7 +31,7 @@ class OtherCarNode: SKSpriteNode {
         self.physicsBody?.friction = 0.0
         self.physicsBody?.mass = 0.0
         self.physicsBody?.categoryBitMask = kCCOtherCarsCategory
-        self.physicsBody?.collisionBitMask = kCCOurCarCategory
+        self.physicsBody?.collisionBitMask = kCCOurCarCategory | kCCBulletCategory
     }
     
     required init?(coder aDecoder: NSCoder) {

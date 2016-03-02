@@ -18,8 +18,10 @@ class CarNode: SKSpriteNode {
         self.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(self.size.width, self.size.height))
         self.physicsBody?.restitution = 0.0
         self.physicsBody?.linearDamping = 0.0
-        self.physicsBody?.mass = 1000.0
+        self.physicsBody?.mass = 0.0
         self.physicsBody?.friction = 0.0
+        self.physicsBody?.allowsRotation = false
+        self.physicsBody?.dynamic = false
         self.zPosition = 2
         self.physicsBody?.categoryBitMask = kCCOurCarCategory
         self.physicsBody?.contactTestBitMask = kCCOtherCarsCategory

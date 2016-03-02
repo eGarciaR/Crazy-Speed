@@ -27,16 +27,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var gameOver : GameOverNode?
     var boosters : BoostersNode?
     var progress : ProgressNode?
+    var blackBullet : BlackBulletNode?
     
     var highscore = 0 // mejor puntuacion
     var score = 0 // Distancia recorrida en metros
+    var minSpeed = 0
     
     var isStarted = false
     var didTheGamePaused = false
     
     var shieldUp = false
+    var shotGunUp = false
     var boosterTime = 0
-    var timer = NSTimer()
+    var timerShield = NSTimer()
+    var timerShotGun = NSTimer()
+    
     
     override func didMoveToView(view: SKView) {
         viewSize = size
@@ -81,6 +86,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         if lifes > 0 {
                             self.newGame()
                         }
+                        else {
+                            self.gameStart?.show()
+                            //Indicar que no tiene vidas
+                        }
                     }
                 case "bolt":
                     if isStarted{pause()}
@@ -88,6 +97,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     if isStarted{resume()}
                 case "shield":
                     setupShieldProtection()
+                    resume()
+                case "shots":
+                    setupShotsGun()
                     resume()
                 case "returnMenu":
                     gameOver?.hide() {
@@ -118,6 +130,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 boosterTime = 0
                 turnOffShieldProtection()
             }
+            if shotGunUp && boosterTime >= 75{
+                boosterTime = 0
+                turnOffShotGun()
+            }
         }
         
         if !self.paused {didTheGamePaused = false}
@@ -127,6 +143,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func didSimulatePhysics() {
         self.enumerateChildNodesWithName("otherCar", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
+            if node.position.y + node.frame.size.height < 0 {
+                node.removeFromParent()
+            }
+            
+        })
+        self.enumerateChildNodesWithName("BlackBullet", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
             if node.position.y + node.frame.size.height < 0 {
                 node.removeFromParent()
             }
@@ -152,6 +174,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             firstBody.node?.removeFromParent()
             if !shieldUp {isGameOver()}
         }
+        if firstBody.categoryBitMask == kCCOtherCarsCategory && secondBody.categoryBitMask == kCCBulletCategory {
+            if firstBody.node != nil { self.addExplosion(firstBody.node!.position)} // Hay que mirar que el nodo no sea nulo.
+            firstBody.node?.removeFromParent()
+            secondBody.node?.removeFromParent()
+        }
     }
     
     func updateScore(currentTime: CFTimeInterval) {
@@ -162,8 +189,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             timeSinceScoreUpdate = 0
         }
 
-        let minSpeed = Int( CGFloat(car!.speedCar) * CGFloat(timeSinceScoreUpdate))
-        labels!.updateScore(score + minSpeed)
+        minSpeed = Int( CGFloat(car!.speedCar) * CGFloat(timeSinceScoreUpdate))
+        //score += minSpeed
+        labels!.updateScore(score +  minSpeed)
     }
     
     func increaseSpeed(currentTime: CFTimeInterval) {
@@ -286,22 +314,41 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(progress!)
     }
     
-    func setupShieldProtection(){
-        print("setupShieldProtection")
+    func setupShieldProtection() {
         car!.activateShield()
         shieldUp = true
         boosterTime = 0
-        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("countdown"), userInfo: nil, repeats: true)
+        timerShield = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("countdown"), userInfo: nil, repeats: true)
+    }
+    
+    func setupShotsGun() {
+        shotGunUp = true
+        boosterTime = 0
+        timerShotGun = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: Selector("countdown"), userInfo: nil, repeats: true)
+    }
+    
+    func createShotGunNode() {
+        blackBullet = BlackBulletNode(position: CGPointMake((car?.position.x)!, (car?.position.y)!+30))
+        blackBullet?.loadPhysicsBody()
+        addChild(blackBullet!)
+    }
+    
+    func turnOffShotGun() {
+        shotGunUp = false
+        timerShotGun.invalidate()
     }
     
     func turnOffShieldProtection() {
         shieldUp = false
         car!.deactivateShield()
-        timer.invalidate()
+        timerShield.invalidate()
     }
     
     func countdown() {
         boosterTime++
+        if shotGunUp {
+            createShotGunNode()
+        }
     }
     
     func setupSounds(){
@@ -342,7 +389,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         lifes--
         labels?.updateLifes(lifes)
         
-        highscore = (score > highscore ) ? score : highscore
+        highscore = ((score+minSpeed) > highscore ) ? (score+minSpeed) : highscore
         labels?.updateBest(highscore)
         
         saveGameData()

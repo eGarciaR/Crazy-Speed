@@ -11,6 +11,9 @@
 		2726A8E21B98FE3D00C4D522 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 2726A8E01B98FE3D00C4D522 /* spark.png */; };
 		274EE61D1BCBAFFC008C8918 /* BoostersNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274EE61C1BCBAFFC008C8918 /* BoostersNode.swift */; };
 		274EE61F1BCBB5F3008C8918 /* shield.png in Resources */ = {isa = PBXBuildFile; fileRef = 274EE61E1BCBB5F3008C8918 /* shield.png */; };
+		276EBB511C878D14008C96F8 /* bullet_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 276EBB501C878D14008C96F8 /* bullet_black.png */; };
+		276EBB531C878D3D008C96F8 /* BlackBulletNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276EBB521C878D3D008C96F8 /* BlackBulletNode.swift */; };
+		276EBB551C87A85A008C96F8 /* bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 276EBB541C87A85A008C96F8 /* bullet.png */; };
 		27C10B581C87018100829A3E /* shots.png in Resources */ = {isa = PBXBuildFile; fileRef = 27C10B571C87018100829A3E /* shots.png */; };
 		2B44CAF21BAC56D700751768 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B44CAF11BAC56D700751768 /* play.png */; };
 		2B44CAF61BAC56E400751768 /* load.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B44CAF31BAC56E400751768 /* load.png */; };
@@ -57,6 +60,9 @@
 		2726A8E01B98FE3D00C4D522 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		274EE61C1BCBAFFC008C8918 /* BoostersNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoostersNode.swift; sourceTree = "<group>"; };
 		274EE61E1BCBB5F3008C8918 /* shield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shield.png; sourceTree = "<group>"; };
+		276EBB501C878D14008C96F8 /* bullet_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet_black.png; sourceTree = "<group>"; };
+		276EBB521C878D3D008C96F8 /* BlackBulletNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackBulletNode.swift; sourceTree = "<group>"; };
+		276EBB541C87A85A008C96F8 /* bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet.png; sourceTree = "<group>"; };
 		27C10B571C87018100829A3E /* shots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shots.png; sourceTree = "<group>"; };
 		2B44CAF11BAC56D700751768 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		2B44CAF31BAC56E400751768 /* load.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = load.png; sourceTree = "<group>"; };
@@ -154,6 +160,7 @@
 				2BB534981BB1938E00374E2A /* hud.png */,
 				2B44CAF31BAC56E400751768 /* load.png */,
 				2B44CAF41BAC56E400751768 /* bolt.png */,
+				276EBB541C87A85A008C96F8 /* bullet.png */,
 				2B44CAF51BAC56E400751768 /* shop.png */,
 				2B44CAF11BAC56D700751768 /* play.png */,
 				27C10B571C87018100829A3E /* shots.png */,
@@ -165,6 +172,7 @@
 				2B5F2D791BA2DDC900F436C1 /* icon@2x.png */,
 				2B5F2D7A1BA2DDC900F436C1 /* icon@3x.png */,
 				2B9E18501B90B33800F7F9D3 /* bg.png */,
+				276EBB501C878D14008C96F8 /* bullet_black.png */,
 				2B5541CF1B94B96A0078DA09 /* bg1.png */,
 				2B9E18521B90C33300F7F9D3 /* car.png */,
 				2B5541C31B949B5A0078DA09 /* pickup.png */,
@@ -194,6 +202,7 @@
 				2B79895A1BB0392500E3219A /* ButtonShopNode.swift */,
 				274EE61C1BCBAFFC008C8918 /* BoostersNode.swift */,
 				2BB534A21BB1A66300374E2A /* CarNode.swift */,
+				276EBB521C878D3D008C96F8 /* BlackBulletNode.swift */,
 				2BCFABC11BB2F22E00B28D37 /* OtherCarNode.swift */,
 				2BB534A41BB1BB0400374E2A /* GameStartNode.swift */,
 				2BB534A61BB1BB1B00374E2A /* GameOverNode.swift */,
@@ -275,6 +284,7 @@
 				2B44CAF71BAC56E400751768 /* bolt.png in Resources */,
 				27C10B581C87018100829A3E /* shots.png in Resources */,
 				2B9E18531B90C33300F7F9D3 /* car.png in Resources */,
+				276EBB551C87A85A008C96F8 /* bullet.png in Resources */,
 				2726A8E21B98FE3D00C4D522 /* spark.png in Resources */,
 				2B5541C81B949B5A0078DA09 /* police.png in Resources */,
 				2B44CAF21BAC56D700751768 /* play.png in Resources */,
@@ -291,6 +301,7 @@
 				2B9E18411B909A0A00F7F9D3 /* Assets.xcassets in Resources */,
 				2B5541C71B949B5A0078DA09 /* pickup.png in Resources */,
 				2B5541C21B949B510078DA09 /* beetle.png in Resources */,
+				276EBB511C878D14008C96F8 /* bullet_black.png in Resources */,
 				2B9E183F1B909A0A00F7F9D3 /* Main.storyboard in Resources */,
 				2B44CAF61BAC56E400751768 /* load.png in Resources */,
 				2BB534991BB1938E00374E2A /* hud.png in Resources */,
@@ -317,6 +328,7 @@
 				2BCFABC21BB2F22E00B28D37 /* OtherCarNode.swift in Sources */,
 				2B9B9ED21BB584DF0081556B /* ProgressNode.swift in Sources */,
 				2B9E183C1B909A0A00F7F9D3 /* GameViewController.swift in Sources */,
+				276EBB531C878D3D008C96F8 /* BlackBulletNode.swift in Sources */,
 				2B9E18361B909A0A00F7F9D3 /* AppDelegate.swift in Sources */,
 				2BB534A51BB1BB0400374E2A /* GameStartNode.swift in Sources */,
 				2BB5349F1BB19E1E00374E2A /* ButtonBoltNode.swift in Sources */,
