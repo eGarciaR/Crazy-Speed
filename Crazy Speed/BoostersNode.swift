@@ -33,6 +33,13 @@ class BoostersNode: SKNode {
         btnResume.zPosition = 7
         boostersNode.addChild(btnResume)
         
+        let btnShots = SKSpriteNode(imageNamed: "shots")
+        btnShots.name = "shots"
+        btnShots.position = CGPointMake((-boostersNode.size.width/3), -(boostersNode.size.height*0.2))
+        btnShots.setScale(0.75)
+        btnShots.zPosition = 7
+        boostersNode.addChild(btnShots)
+        
         hidden = true
     }
     

@@ -21,10 +21,17 @@ class GameOverNode : SKNode {
         
         let btnLoad = SKSpriteNode(imageNamed: "load")
         btnLoad.name = "load"
-        btnLoad.position = CGPointMake(0, -(gameOverNode.size.height*0.2))
+        btnLoad.position = CGPointMake(gameOverNode.size.width*(-0.25), -(gameOverNode.size.height*0.2))
         btnLoad.setScale(0.75)
         btnLoad.zPosition = 7
         gameOverNode.addChild(btnLoad)
+        
+        let btnReturnMenu = SKSpriteNode(imageNamed: "shop") // Hay que cambiar la imagen
+        btnReturnMenu.name = "returnMenu"
+        btnReturnMenu.position = CGPointMake(gameOverNode.size.width*0.25, -(gameOverNode.size.height*0.2))
+        btnReturnMenu.setScale(0.75)
+        btnReturnMenu.zPosition = 7
+        gameOverNode.addChild(btnReturnMenu)
         
         hidden = true
     }

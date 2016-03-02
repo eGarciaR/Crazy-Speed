@@ -77,7 +77,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     }
                 case "load":
                     gameOver?.hide(){
-                        self.gameStart?.show()
+                        //self.gameStart?.show()
+                        if lifes > 0 {
+                            self.newGame()
+                        }
                     }
                 case "bolt":
                     if isStarted{pause()}
@@ -86,6 +89,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 case "shield":
                     setupShieldProtection()
                     resume()
+                case "returnMenu":
+                    gameOver?.hide() {
+                        self.gameStart?.show()
+                    }
                 default:
                     break
                 }
