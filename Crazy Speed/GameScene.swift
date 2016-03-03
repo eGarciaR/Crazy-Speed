@@ -43,9 +43,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var timerShield = NSTimer()
     var timerShotGun = NSTimer()
     
-    var audioPlayer = AVAudioPlayer()
-    
-    
     override func didMoveToView(view: SKView) {
         viewSize = size
         
@@ -69,6 +66,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         setupGameOver()
         setupBoosters()
         setupProgress()
+        setupSounds()
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -398,7 +396,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func setupSounds(){
-        
+        if #available(iOS 9.0, *) {
+            let backgroundMusic = SKAudioNode(fileNamed: "music8bits.mp3")
+            self.addChild(backgroundMusic)
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     func addExplosion(position: CGPoint) {
