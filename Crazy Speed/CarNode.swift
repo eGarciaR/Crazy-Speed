@@ -11,7 +11,8 @@ class CarNode: SKSpriteNode {
         
         self.name = "Car"
         self.position = position
-        self.setScale(0.25)
+        if UIScreen.mainScreen().bounds.width <= 420 {self.setScale(0.25)}
+        else {self.setScale(0.35)}
     }
     
     func loadPhysicsBody(){
@@ -32,11 +33,13 @@ class CarNode: SKSpriteNode {
     }
     
     func activateShield() {
-        self.setScale(0.4)
+        if UIScreen.mainScreen().bounds.width <= 420 {self.setScale(0.4)}
+        else {self.setScale(0.6)}
     }
     
     func deactivateShield() {
-        self.setScale(0.25)
+        if UIScreen.mainScreen().bounds.width <= 420 {self.setScale(0.25)}
+        else {self.setScale(0.35)}
     }
     
     func move(location: CGFloat, position: CGFloat){

@@ -43,6 +43,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var timerShield = NSTimer()
     var timerShotGun = NSTimer()
     
+    var audioPlayer = AVAudioPlayer()
+    
     
     override func didMoveToView(view: SKView) {
         viewSize = size
@@ -97,11 +99,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 case "resume":
                     if isStarted{resume()}
                 case "shield":
-                    setupShieldProtection()
-                    resume()
+                    if !shotGunUp && !shieldUp { // Se comprueva que no haya ningún booster activado
+                        setupShieldProtection()
+                        resume()
+                    }
                 case "shots":
-                    setupShotsGun()
-                    resume()
+                    if !shieldUp && !shotGunUp { // Se comprueva que no haya ningún booster activado
+                        setupShotsGun()
+                        resume()
+                    }
                 case "returnMenu":
                     gameOver?.hide() {
                         self.gameStart?.show()
@@ -120,7 +126,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func update(currentTime: CFTimeInterval) {
         
         addLife()
-        if isStarted && (!paused){
+        if isStarted && (!didTheGamePaused){
             background?.move()
             addCar(currentTime)
             updateCarTimeInterval(currentTime)
@@ -284,7 +290,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func setupCar() {
-        car = CarNode(position: CGPointMake(self.size.width/2, 100))
+        car = CarNode(position: CGPointMake(self.size.width/2, self.size.height/6))
         car?.loadPhysicsBody()
         self.addChild(car!)
     }
@@ -439,6 +445,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         saveGameData()
         
         self.enumerateChildNodesWithName("otherCar", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
+            node.removeFromParent()
+        })
+        self.enumerateChildNodesWithName("BlackBullet", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
             node.removeFromParent()
         })
         
