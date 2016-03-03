@@ -28,6 +28,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var boosters : BoostersNode?
     var progress : ProgressNode?
     var blackBullet : BlackBulletNode?
+    var countdownNode : CountdownNode?
     
     var highscore = 0 // mejor puntuacion
     var score = 0 // Distancia recorrida en metros
@@ -119,7 +120,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func update(currentTime: CFTimeInterval) {
         
         addLife()
-        
         if isStarted && (!paused){
             background?.move()
             addCar(currentTime)
@@ -336,19 +336,59 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func turnOffShotGun() {
         shotGunUp = false
         timerShotGun.invalidate()
+        self.enumerateChildNodesWithName("countdownNode", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
+            node.removeFromParent()
+        })
     }
     
     func turnOffShieldProtection() {
         shieldUp = false
         car!.deactivateShield()
         timerShield.invalidate()
+        self.enumerateChildNodesWithName("countdownNode", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
+            node.removeFromParent()
+        })
     }
     
     func countdown() {
         boosterTime++
+        if shieldUp {
+            if boosterTime == 12 {setupCountdownNode(3)}
+            else if boosterTime == 13 {
+                self.enumerateChildNodesWithName("countdownNode", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
+                    node.removeFromParent()
+                })
+                setupCountdownNode(2)
+            }
+            else if boosterTime == 14 {
+                self.enumerateChildNodesWithName("countdownNode", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
+                    node.removeFromParent()
+                })
+                setupCountdownNode(1)
+            }
+        }
         if shotGunUp {
             createShotGunNode()
+            if boosterTime == 30 {setupCountdownNode(3)}
+            else if boosterTime == 33 {
+                self.enumerateChildNodesWithName("countdownNode", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
+                    node.removeFromParent()
+                })
+                setupCountdownNode(2)
+            }
+            else if boosterTime == 36 {
+                self.enumerateChildNodesWithName("countdownNode", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
+                    node.removeFromParent()
+                })
+                setupCountdownNode(1)
+            }
         }
+    }
+    
+    func setupCountdownNode(imageNode: Int) {
+        countdownNode = CountdownNode(image: imageNode, position: CGPointMake(self.size.width/2, self.size.height/2))
+        self.addChild(countdownNode!)
+        
     }
     
     func setupSounds(){
