@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2726A8E11B98FE3D00C4D522 /* CarExplosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2726A8DF1B98FE3D00C4D522 /* CarExplosion.sks */; };
 		2726A8E21B98FE3D00C4D522 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 2726A8E01B98FE3D00C4D522 /* spark.png */; };
+		272F114A1C89965600A2AA2E /* TransparentPauseNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272F11491C89965600A2AA2E /* TransparentPauseNode.swift */; };
 		273F5F341C884A0F00B66386 /* number1.png in Resources */ = {isa = PBXBuildFile; fileRef = 273F5F331C884A0F00B66386 /* number1.png */; };
 		273F5F361C884A1600B66386 /* number2.png in Resources */ = {isa = PBXBuildFile; fileRef = 273F5F351C884A1600B66386 /* number2.png */; };
 		273F5F381C884A1C00B66386 /* number3.png in Resources */ = {isa = PBXBuildFile; fileRef = 273F5F371C884A1C00B66386 /* number3.png */; };
@@ -63,6 +64,7 @@
 /* Begin PBXFileReference section */
 		2726A8DF1B98FE3D00C4D522 /* CarExplosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CarExplosion.sks; sourceTree = "<group>"; };
 		2726A8E01B98FE3D00C4D522 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		272F11491C89965600A2AA2E /* TransparentPauseNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentPauseNode.swift; sourceTree = "<group>"; };
 		273F5F331C884A0F00B66386 /* number1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = number1.png; sourceTree = "<group>"; };
 		273F5F351C884A1600B66386 /* number2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = number2.png; sourceTree = "<group>"; };
 		273F5F371C884A1C00B66386 /* number3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = number3.png; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				2BB534A61BB1BB1B00374E2A /* GameOverNode.swift */,
 				2B9B9ED11BB584DF0081556B /* ProgressNode.swift */,
 				273F5F391C884B0600B66386 /* CountdownNode.swift */,
+				272F11491C89965600A2AA2E /* TransparentPauseNode.swift */,
 			);
 			name = Node;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				2B9E183A1B909A0A00F7F9D3 /* GameScene.swift in Sources */,
 				2B79895B1BB0392500E3219A /* ButtonShopNode.swift in Sources */,
 				2BB534A31BB1A66300374E2A /* CarNode.swift in Sources */,
+				272F114A1C89965600A2AA2E /* TransparentPauseNode.swift in Sources */,
 				2B7989571BB005D700E3219A /* BackgroundNode.swift in Sources */,
 				274EE61D1BCBAFFC008C8918 /* BoostersNode.swift in Sources */,
 				2B7989591BB015F600E3219A /* LabelsNode.swift in Sources */,

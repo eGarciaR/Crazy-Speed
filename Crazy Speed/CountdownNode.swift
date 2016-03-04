@@ -17,7 +17,7 @@ class CountdownNode: SKSpriteNode {
         self.name = "countdownNode"
         self.position = position
         self.setScale(5)
-        self.zPosition = 7
+        self.zPosition = 6
         
     }
     

@@ -1,4 +1,5 @@
 import SpriteKit
+import AVFoundation
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
@@ -29,6 +30,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var progress : ProgressNode?
     var blackBullet : BlackBulletNode?
     var countdownNode : CountdownNode?
+    var transparentPauseNode : TransparentPauseNode?
     
     var highscore = 0 // mejor puntuacion
     var score = 0 // Distancia recorrida en metros
@@ -42,6 +44,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var boosterTime = 0
     var timerShield = NSTimer()
     var timerShotGun = NSTimer()
+    
+    var audioPlayer = AVAudioPlayer()
     
     override func didMoveToView(view: SKView) {
         viewSize = size
@@ -67,6 +71,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         setupBoosters()
         setupProgress()
         setupSounds()
+        setupTransparentPauseNode()
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -81,6 +86,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     if lifes > 0 {
                         gameStart?.hide(){ self.newGame() }
                     }
+                    break
                 case "load":
                     gameOver?.hide(){
                         //self.gameStart?.show()
@@ -92,24 +98,32 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                             //Indicar que no tiene vidas
                         }
                     }
+                    break
                 case "bolt":
                     if isStarted{pause()}
+                case "transparentPauseNode": // Nodo "transparente" que permite acceder al botón de pausa más facilmente
+                    if isStarted{pause()}
+                    break
                 case "resume":
                     if isStarted{resume()}
+                    break
                 case "shield":
                     if !shotGunUp && !shieldUp { // Se comprueva que no haya ningún booster activado
                         setupShieldProtection()
                         resume()
                     }
+                    break
                 case "shots":
                     if !shieldUp && !shotGunUp { // Se comprueva que no haya ningún booster activado
                         setupShotsGun()
                         resume()
                     }
+                    break
                 case "returnMenu":
                     gameOver?.hide() {
                         self.gameStart?.show()
                     }
+                    break
                 default:
                     break
                 }
@@ -396,12 +410,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func setupSounds(){
-        if #available(iOS 9.0, *) {
+        /*if #available(iOS 9.0, *) {
             let backgroundMusic = SKAudioNode(fileNamed: "music8bits.mp3")
             self.addChild(backgroundMusic)
         } else {
             // Fallback on earlier versions
+        }*/
+        let path = NSBundle.mainBundle().pathForResource("music8bits.mp3", ofType:nil)!
+        let url = NSURL(fileURLWithPath: path)
+        do {
+            let sound = try AVAudioPlayer(contentsOfURL: url)
+            audioPlayer = sound
+            audioPlayer.numberOfLoops = -1 // Repetir infinitamente
+            sound.play()
+        } catch {
+            // couldn't load file :(
         }
+    }
+    
+    func setupTransparentPauseNode() {
+        transparentPauseNode = TransparentPauseNode(position: CGPointMake(size.width * 0.80, 20))
+        self.addChild(transparentPauseNode!)
     }
     
     func addExplosion(position: CGPoint) {
@@ -424,6 +453,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         didTheGamePaused = true
         if shotGunUp {timerShotGun.invalidate()} // Si el juego se pausa, hay que parar el timer del shot gun
         boosters?.show()
+        audioPlayer.volume = 0.2
     }
     
     func resume() {
@@ -433,11 +463,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             timerShotGun = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("countdown"), userInfo: nil, repeats: true)
         } // Si el juego se reanuda, hay que reinicializar el timer
         boosters?.hide()
+        audioPlayer.volume = 1.0
     }
     
     func isGameOver() {
         isStarted = false
-        timerShotGun.invalidate()
+        
+        turnOffShotGun()
         
         lifes--
         labels?.updateLifes(lifes)
