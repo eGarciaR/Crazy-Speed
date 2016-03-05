@@ -13,7 +13,7 @@ class TransparentPauseNode: SKSpriteNode {
     init(position: CGPoint) {
         let texture = SKTexture(imageNamed: "layer")
         super.init(texture: texture, color: UIColor.clearColor(), size: CGSizeMake(viewSize.width/6, viewSize.height/10))
-        self.alpha = 0.1 // Es una manera de hacer transparente el nodo, si se usa 0.0 el nodo no es detectado cuando se toca
+        self.alpha = 0.01 // Es una manera de hacer transparente el nodo, si se usa 0.0 el nodo no es detectado cuando se toca
         
         self.name = "transparentPauseNode"
         self.position = position

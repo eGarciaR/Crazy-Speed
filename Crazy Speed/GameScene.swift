@@ -20,7 +20,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var background : BackgroundNode?
     var labels : LabelsNode?
-    var btnBolt : ButtonBoltNode?
+    var btnPause : ButtonPauseNode?
     //var btnResume : BoostersNode?
     var car : CarNode?
     var otherCar : OtherCarNode?
@@ -31,6 +31,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var blackBullet : BlackBulletNode?
     var countdownNode : CountdownNode?
     var transparentPauseNode : TransparentPauseNode?
+    var shieldNode : ShieldBoosterNode?
+    var shotGunNode : ShotGunBoosterNode?
     
     var highscore = 0 // mejor puntuacion
     var score = 0 // Distancia recorrida en metros
@@ -38,6 +40,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var isStarted = false
     var didTheGamePaused = false
+    var boosterTouched = false
     
     var shieldUp = false
     var shotGunUp = false
@@ -72,6 +75,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         setupProgress()
         setupSounds()
         setupTransparentPauseNode()
+        setupShieldNode()
+        setupShotGunNode()
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -99,7 +104,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         }
                     }
                     break
-                case "bolt":
+                case "pause":
                     if isStarted{pause()}
                 case "transparentPauseNode": // Nodo "transparente" que permite acceder al botón de pausa más facilmente
                     if isStarted{pause()}
@@ -110,14 +115,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 case "shield":
                     if !shotGunUp && !shieldUp { // Se comprueva que no haya ningún booster activado
                         setupShieldProtection()
-                        resume()
+                        //resume()
                     }
+                    boosterTouched = true
                     break
                 case "shots":
                     if !shieldUp && !shotGunUp { // Se comprueva que no haya ningún booster activado
                         setupShotsGun()
-                        resume()
+                        //resume()
                     }
+                    boosterTouched = true
                     break
                 case "returnMenu":
                     gameOver?.hide() {
@@ -129,9 +136,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 }
             }
             
-            if isStarted && !didTheGamePaused{
+            if isStarted && !didTheGamePaused && !boosterTouched{
                 car?.move(touchLocation.x, position: size.width/2)
             }
+            boosterTouched = false
         }
     }
    
@@ -219,8 +227,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             //print("increaseSpeed: \(increaseSpeedTimeInterval)")
             car?.updateSpeed(1)
             if car!.speedCar%10 == 0 { background?.updateSpeed() }
-            mySideCarsSpeed += 2
-            otherSideCarsSpeed += 2
+            if (self.totalGameTime < 70) {
+                mySideCarsSpeed += 4
+                otherSideCarsSpeed += 4
+            }
+            else {
+                mySideCarsSpeed += 8
+                otherSideCarsSpeed += 8
+            }
             
             timeSinceSpeedIncrease = 0
         }
@@ -230,7 +244,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if ((lastUpdateTimeInterval) != nil) { timeSinceCarAdded = timeSinceCarAdded + currentTime - lastUpdateTimeInterval! }
         
         if (timeSinceCarAdded > addCarTimeInterval) {
-            //print("addCar: \(addCarTimeInterval)")
+            print("addCar: \(addCarTimeInterval)")
             
             let mySideCar = OtherCarNode(mySide: true)
             mySideCar.loadPhysicsBody(CGFloat(mySideCarsSpeed))
@@ -268,7 +282,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func updateCarTimeInterval(currentTime: CFTimeInterval){
         if ((lastUpdateTimeInterval) != nil) { totalGameTime = totalGameTime + currentTime - lastUpdateTimeInterval! }
         
-        if ( self.totalGameTime > 60) {
+        if (self.totalGameTime > 100) {
+            addCarTimeInterval = 0.2
+        } else if (self.totalGameTime > 80) {
+            addCarTimeInterval = 0.3
+        } else if ( self.totalGameTime > 60) {
             addCarTimeInterval = 0.5
         } else if (self.totalGameTime > 45) {
             addCarTimeInterval = 0.75
@@ -297,8 +315,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func setupBtnBolt(){
-        btnBolt = ButtonBoltNode(position: CGPointMake(size.width * 0.80, 20))
-        addChild(btnBolt!)
+        btnPause = ButtonPauseNode(position: CGPointMake(size.width * 0.85, 20))
+        addChild(btnPause!)
     }
     
     func setupCar() {
@@ -369,7 +387,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func countdown() {
-        boosterTime++
+        if !paused {boosterTime++}
         if shieldUp {
             if boosterTime == 12 {setupCountdownNode(3)}
             else if boosterTime == 13 {
@@ -429,8 +447,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func setupTransparentPauseNode() {
-        transparentPauseNode = TransparentPauseNode(position: CGPointMake(size.width * 0.80, 20))
+        transparentPauseNode = TransparentPauseNode(position: CGPointMake(size.width * 0.85, 20))
         self.addChild(transparentPauseNode!)
+    }
+    
+    func setupShieldNode() {
+        shieldNode = ShieldBoosterNode(position: CGPointMake(self.size.width/2+self.size.width/3+self.size.width/9, self.size.height/2))
+        self.addChild(shieldNode!)
+    }
+    
+    func setupShotGunNode() {
+        shotGunNode = ShotGunBoosterNode(position: CGPointMake(self.size.width/16, self.size.height/2))
+        self.addChild(shotGunNode!)
     }
     
     func addExplosion(position: CGPoint) {

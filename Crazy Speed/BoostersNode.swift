@@ -13,18 +13,18 @@ class BoostersNode: SKNode {
         addChild(boostersNode)
         
         let title = SKLabelNode(fontNamed: "Arial")
-        title.text = "BOOSTERS!!!"
+        title.text = "PAUSE"
         title.fontSize = CGFloat(viewSize.width / 10.5)
         title.position = CGPointMake(0, boostersNode.size.height*0.2)
         title.zPosition = 7
         boostersNode.addChild(title)
         
-        let btnShield = SKSpriteNode(imageNamed: "shield")
+        /*let btnShield = SKSpriteNode(imageNamed: "shield")
         btnShield.name = "shield"
         btnShield.position = CGPointMake(boostersNode.size.width/3, -(boostersNode.size.height*0.2))
         btnShield.setScale(0.75)
         btnShield.zPosition = 7
-        boostersNode.addChild(btnShield)
+        boostersNode.addChild(btnShield)*/
         
         let btnResume = SKSpriteNode(imageNamed: "play")
         btnResume.name = "resume"
@@ -33,12 +33,19 @@ class BoostersNode: SKNode {
         btnResume.zPosition = 7
         boostersNode.addChild(btnResume)
         
-        let btnShots = SKSpriteNode(imageNamed: "shots")
+        /*let btnReturnMenu = SKSpriteNode(imageNamed: "quit") // Hay que cambiar la imagen
+        btnReturnMenu.name = "returnMenu"
+        btnReturnMenu.position = CGPointMake(boostersNode.size.width*0.25, -(boostersNode.size.height*0.2))
+        btnReturnMenu.setScale(0.75)
+        btnReturnMenu.zPosition = 7
+        boostersNode.addChild(btnReturnMenu)*/
+        
+        /*let btnShots = SKSpriteNode(imageNamed: "shots")
         btnShots.name = "shots"
         btnShots.position = CGPointMake((-boostersNode.size.width/3), -(boostersNode.size.height*0.2))
         btnShots.setScale(0.75)
         btnShots.zPosition = 7
-        boostersNode.addChild(btnShots)
+        boostersNode.addChild(btnShots)*/
         
         hidden = true
     }
@@ -50,10 +57,19 @@ class BoostersNode: SKNode {
         //boostersNode.runAction(action)
     }
     
-    
-    func hide(){
+    func hide() {
         hidden = true
     }
+    
+    
+    /*func hide(completion: () -> ()){
+        let action = SKAction.moveToY(viewSize.height, duration: 0.4)
+        let run = SKAction.runBlock({
+            self.hidden = true
+        })
+        let sequence = SKAction.sequence([action, run])
+        boostersNode.runAction(sequence, completion:  completion)
+    }*/
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

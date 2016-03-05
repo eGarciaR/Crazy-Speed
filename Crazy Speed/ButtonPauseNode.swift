@@ -1,12 +1,12 @@
 import SpriteKit
 
-class ButtonBoltNode: SKSpriteNode {
+class ButtonPauseNode: SKSpriteNode {
     
     init(position: CGPoint) {
-        let texture = SKTexture(imageNamed: "bolt")
+        let texture = SKTexture(imageNamed: "pause")
         super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
         
-        self.name = "bolt"
+        self.name = "pause"
         self.position = position
         self.setScale(0.4)
         self.zPosition = 6

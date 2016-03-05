@@ -19,7 +19,7 @@ class OtherCarNode: SKSpriteNode {
         
         self.name = "otherCar"
         if UIScreen.mainScreen().bounds.width <= 420 {self.setScale(0.35)}
-        else {self.setScale(0.45)}
+        else {self.setScale(0.5)}
         self.position = CGPointMake(totalAvailablePositions[carPosition], viewSize.height + (texture.size().height/2))
         self.zPosition = 3
     }

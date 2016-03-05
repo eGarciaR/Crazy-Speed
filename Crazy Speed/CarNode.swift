@@ -12,7 +12,7 @@ class CarNode: SKSpriteNode {
         self.name = "Car"
         self.position = position
         if UIScreen.mainScreen().bounds.width <= 420 {self.setScale(0.25)}
-        else {self.setScale(0.35)}
+        else {self.setScale(0.4)}
     }
     
     func loadPhysicsBody(){
