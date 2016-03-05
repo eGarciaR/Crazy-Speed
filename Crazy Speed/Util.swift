@@ -12,6 +12,8 @@ let font = "Damascus"
 var viewSize: CGSize!
 var totalAvailablePositions = [CGFloat()]
 var lifes = 0 //vidas
+var qShield = 0 //cantidad de escudos
+var qShotGun = 0 //cantidad de disparos
 var lastLane = 0
 var mySideCarsSpeed = 120
 var otherSideCarsSpeed = 300

@@ -10,6 +10,8 @@ import SpriteKit
 
 class ShotGunBoosterNode: SKSpriteNode {
     
+    var quantity : SKLabelNode!
+    
     init(position: CGPoint) {
         let texture = SKTexture(imageNamed: "shots")
         super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())

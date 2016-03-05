@@ -6,6 +6,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var timeOfLastLife : CFAbsoluteTime?
     var timeTillNextLife : CFTimeInterval = CFTimeInterval(600)
     
+    var timeOfLastShield : CFAbsoluteTime?
+    var timeTillNextShield : CFTimeInterval = CFTimeInterval(600)
+    
+    var timeOfLastShotGun : CFAbsoluteTime?
+    var timeTillNextShotGun : CFTimeInterval = CFTimeInterval(600)
+    
     var totalGameTime : CFTimeInterval = 0
     var lastUpdateTimeInterval : CFTimeInterval?
     
@@ -67,7 +73,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         setupBackground()
         setupHUD()
         setupLabels()
-        setupBtnBolt()
+        setupBtnPause()
         setupCar()
         setupStart()
         setupGameOver()
@@ -113,14 +119,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     if isStarted{resume()}
                     break
                 case "shield":
-                    if !shotGunUp && !shieldUp { // Se comprueva que no haya ningún booster activado
+                    if !shotGunUp && !shieldUp  && qShield > 0{ // Se comprueva que no haya ningún booster activado
                         setupShieldProtection()
                         //resume()
                     }
                     boosterTouched = true
                     break
                 case "shots":
-                    if !shieldUp && !shotGunUp { // Se comprueva que no haya ningún booster activado
+                    if !shieldUp && !shotGunUp  && qShotGun > 0{ // Se comprueva que no haya ningún booster activado
                         setupShotsGun()
                         //resume()
                     }
@@ -146,6 +152,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func update(currentTime: CFTimeInterval) {
         
         addLife()
+        addShield() // booster
+        addShotGun() // booster
         if isStarted && (!didTheGamePaused){
             background?.move()
             addCar(currentTime)
@@ -244,7 +252,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if ((lastUpdateTimeInterval) != nil) { timeSinceCarAdded = timeSinceCarAdded + currentTime - lastUpdateTimeInterval! }
         
         if (timeSinceCarAdded > addCarTimeInterval) {
-            print("addCar: \(addCarTimeInterval)")
+            //print("addCar: \(addCarTimeInterval)")
             
             let mySideCar = OtherCarNode(mySide: true)
             mySideCar.loadPhysicsBody(CGFloat(mySideCarsSpeed))
@@ -276,6 +284,36 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
             
             timeOfLastLife = CFAbsoluteTimeGetCurrent()
+        }
+    }
+    
+    func addShield() {
+        let currentTimeAbsolute = CFAbsoluteTimeGetCurrent()
+        
+        if currentTimeAbsolute - timeOfLastShield! > timeTillNextShield {
+            if qShield < 5 {
+                let totalShields = Int((currentTimeAbsolute - timeOfLastShield!)/timeTillNextShield)
+                qShield = (totalShields >= 5) ? 5 : min(5,qShield + totalShields)
+                labels?.updateQuantityShield(qShield)
+                saveGameData()
+            }
+            
+            timeOfLastShield = CFAbsoluteTimeGetCurrent()
+        }
+    }
+    
+    func addShotGun() {
+        let currentTimeAbsolute = CFAbsoluteTimeGetCurrent()
+        
+        if currentTimeAbsolute - timeOfLastShotGun! > timeTillNextShotGun {
+            if qShotGun < 5 {
+                let totalShots = Int((currentTimeAbsolute - timeOfLastShotGun!)/timeTillNextShotGun)
+                qShotGun = (totalShots >= 5) ? 5 : min(5,qShotGun + totalShots)
+                labels?.updateQuantityShotGun(qShotGun)
+                saveGameData()
+            }
+            
+            timeOfLastShotGun = CFAbsoluteTimeGetCurrent()
         }
     }
     
@@ -311,10 +349,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         labels = LabelsNode()
         labels?.updateLifes(lifes)
         labels?.updateBest(highscore)
+        labels?.updateQuantityShield(qShield)
+        labels?.updateQuantityShotGun(qShotGun)
         addChild(labels!)
     }
     
-    func setupBtnBolt(){
+    func setupBtnPause(){
         btnPause = ButtonPauseNode(position: CGPointMake(size.width * 0.85, 20))
         addChild(btnPause!)
     }
@@ -355,12 +395,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         shieldUp = true
         boosterTime = 0
         timerShield = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("countdown"), userInfo: nil, repeats: true)
+        --qShield
+        labels!.updateQuantityShield(qShield)
     }
     
     func setupShotsGun() {
         shotGunUp = true
         boosterTime = 0
         timerShotGun = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("countdown"), userInfo: nil, repeats: true)
+        --qShotGun
+        labels!.updateQuantityShotGun(qShotGun)
     }
     
     func createShotGunNode() {
@@ -536,21 +580,33 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //print("saveGameData")
         userDefaults.setBool(true, forKey: "syncronized")
         userDefaults.setInteger(lifes, forKey: "lifes")
+        userDefaults.setInteger(qShield, forKey: "shields")
+        userDefaults.setInteger(qShotGun, forKey: "shots")
         userDefaults.setInteger(highscore, forKey: "highscore")
         userDefaults.setObject(timeOfLastLife, forKey: "timeOfLastLife")
+        userDefaults.setObject(timeOfLastShield, forKey: "timeOfLastShield")
+        userDefaults.setObject(timeOfLastShotGun, forKey: "timeOfLastShotGun")
         userDefaults.synchronize()
     }
     
     func loadGameData() {
         //print("loadGameData")
         lifes = userDefaults.integerForKey("lifes")
+        qShield = userDefaults.integerForKey("shields")
+        qShotGun = userDefaults.integerForKey("shots")
         highscore = userDefaults.integerForKey("highscore")
         timeOfLastLife = userDefaults.objectForKey("timeOfLastLife") as? CFAbsoluteTime
+        timeOfLastShield = userDefaults.objectForKey("timeOfLastShield") as? CFAbsoluteTime
+        timeOfLastShotGun = userDefaults.objectForKey("timeOfLastShotGun") as? CFAbsoluteTime
         if timeOfLastLife == nil { timeOfLastLife = CFAbsoluteTimeGetCurrent() }
+        if timeOfLastShield == nil { timeOfLastShield = CFAbsoluteTimeGetCurrent() }
+        if timeOfLastShotGun == nil { timeOfLastShotGun = CFAbsoluteTimeGetCurrent() }
         
         let sync = userDefaults.boolForKey("syncronized")
         if !sync {
             lifes = 5
+            qShield = 5
+            qShotGun = 5
             saveGameData()
         }
     }
