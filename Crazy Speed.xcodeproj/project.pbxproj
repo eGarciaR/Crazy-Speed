@@ -14,6 +14,7 @@
 		27321EDC1C8AFDB4003D2A6F /* ShotGunBoosterNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27321EDB1C8AFDB4003D2A6F /* ShotGunBoosterNode.swift */; };
 		27321EDE1C8B026F003D2A6F /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 27321EDD1C8B026F003D2A6F /* pause.png */; };
 		27321EE01C8B0391003D2A6F /* quit.png in Resources */ = {isa = PBXBuildFile; fileRef = 27321EDF1C8B0391003D2A6F /* quit.png */; };
+		27345FBE1C8C33B9002413A0 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 27345FBD1C8C33B9002413A0 /* settings.png */; };
 		273F5F341C884A0F00B66386 /* number1.png in Resources */ = {isa = PBXBuildFile; fileRef = 273F5F331C884A0F00B66386 /* number1.png */; };
 		273F5F361C884A1600B66386 /* number2.png in Resources */ = {isa = PBXBuildFile; fileRef = 273F5F351C884A1600B66386 /* number2.png */; };
 		273F5F381C884A1C00B66386 /* number3.png in Resources */ = {isa = PBXBuildFile; fileRef = 273F5F371C884A1C00B66386 /* number3.png */; };
@@ -73,6 +74,7 @@
 		27321EDB1C8AFDB4003D2A6F /* ShotGunBoosterNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotGunBoosterNode.swift; sourceTree = "<group>"; };
 		27321EDD1C8B026F003D2A6F /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
 		27321EDF1C8B0391003D2A6F /* quit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quit.png; sourceTree = "<group>"; };
+		27345FBD1C8C33B9002413A0 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		273F5F331C884A0F00B66386 /* number1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = number1.png; sourceTree = "<group>"; };
 		273F5F351C884A1600B66386 /* number2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = number2.png; sourceTree = "<group>"; };
 		273F5F371C884A1C00B66386 /* number3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = number3.png; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				274EE61E1BCBB5F3008C8918 /* shield.png */,
+				27345FBD1C8C33B9002413A0 /* settings.png */,
 				2726A8E01B98FE3D00C4D522 /* spark.png */,
 				2BB5349A1BB1939700374E2A /* layer.png */,
 				2746446D1C88CE2200F2FE61 /* music8bits.mp3 */,
@@ -318,6 +321,7 @@
 				27C10B581C87018100829A3E /* shots.png in Resources */,
 				2B9E18531B90C33300F7F9D3 /* car.png in Resources */,
 				276EBB551C87A85A008C96F8 /* bullet.png in Resources */,
+				27345FBE1C8C33B9002413A0 /* settings.png in Resources */,
 				2726A8E21B98FE3D00C4D522 /* spark.png in Resources */,
 				2B5541C81B949B5A0078DA09 /* police.png in Resources */,
 				2B44CAF21BAC56D700751768 /* play.png in Resources */,

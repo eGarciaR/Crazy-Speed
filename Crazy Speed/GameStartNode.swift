@@ -57,6 +57,15 @@ class GameStartNode : SKNode {
         startNode.runAction(action)
     }
     
+    func showFast() {
+        alpha = 1.0
+        hidden = false
+        timeNode.hidden = lifes != 0
+        startNode.position = CGPointMake(viewSize.width/2, viewSize.height/2)
+        //let action = SKAction.moveToY(viewSize.height/2, duration: 0.5)
+        //startNode.runAction(action)
+    }
+    
     func hide(completion: () -> ()){
         let fade = SKAction.fadeOutWithDuration(1)
         let run = SKAction.runBlock({

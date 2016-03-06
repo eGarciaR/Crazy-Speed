@@ -94,6 +94,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if let name = node.name as String? {
                 switch name {
                 case "play":
+                    paused = false
                     if lifes > 0 {
                         gameStart?.hide(){ self.newGame() }
                     }
@@ -137,6 +138,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         self.gameStart?.show()
                     }
                     break
+                /*case "quit":
+                    boosters?.hide()
+                    gameFinish()
+                    self.gameStart!.showFast()
+                    break*/
                 default:
                     break
                 }
@@ -319,9 +325,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func updateCarTimeInterval(currentTime: CFTimeInterval){
         if ((lastUpdateTimeInterval) != nil) { totalGameTime = totalGameTime + currentTime - lastUpdateTimeInterval! }
-        
-        if (self.totalGameTime > 100) {
+        if (self.totalGameTime > 120) {
             addCarTimeInterval = 0.2
+        } else if (self.totalGameTime > 100) {
+            addCarTimeInterval = 0.25
         } else if (self.totalGameTime > 80) {
             addCarTimeInterval = 0.3
         } else if ( self.totalGameTime > 60) {
@@ -402,6 +409,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func setupShotsGun() {
         shotGunUp = true
         boosterTime = 0
+        createShotGunNode()
         timerShotGun = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("countdown"), userInfo: nil, repeats: true)
         --qShotGun
         labels!.updateQuantityShotGun(qShotGun)
@@ -559,6 +567,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         })
         
         gameOver?.show()
+    }
+    
+    func gameFinish() { // Provisional hasta ver cuando ejecutar una acción al pausar el juego
+        isStarted = false
+        
+        turnOffShotGun()
+        
+        lifes--
+        labels?.updateLifes(lifes)
+        
+        highscore = ((score+minSpeed) > highscore ) ? (score+minSpeed) : highscore
+        labels?.updateBest(highscore)
+        
+        saveGameData()
+        
+        self.enumerateChildNodesWithName("otherCar", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
+            node.removeFromParent()
+        })
+        self.enumerateChildNodesWithName("BlackBullet", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
+            node.removeFromParent()
+        })
     }
     
     func newGame() {

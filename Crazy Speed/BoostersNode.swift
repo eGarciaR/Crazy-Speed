@@ -33,12 +33,19 @@ class BoostersNode: SKNode {
         btnResume.zPosition = 7
         boostersNode.addChild(btnResume)
         
-        /*let btnReturnMenu = SKSpriteNode(imageNamed: "quit") // Hay que cambiar la imagen
-        btnReturnMenu.name = "returnMenu"
-        btnReturnMenu.position = CGPointMake(boostersNode.size.width*0.25, -(boostersNode.size.height*0.2))
+        let btnSettings = SKSpriteNode(imageNamed: "settings")
+        btnSettings.name = "settings"
+        btnSettings.position = CGPointMake((-boostersNode.size.width/3), -(boostersNode.size.height*0.2))
+        btnSettings.setScale(0.75)
+        btnSettings.zPosition = 7
+        boostersNode.addChild(btnSettings)
+        
+        let btnReturnMenu = SKSpriteNode(imageNamed: "quit")
+        btnReturnMenu.name = "quit"
+        btnReturnMenu.position = CGPointMake(boostersNode.size.width/3, -(boostersNode.size.height*0.2))
         btnReturnMenu.setScale(0.75)
         btnReturnMenu.zPosition = 7
-        boostersNode.addChild(btnReturnMenu)*/
+        boostersNode.addChild(btnReturnMenu)
         
         /*let btnShots = SKSpriteNode(imageNamed: "shots")
         btnShots.name = "shots"
