@@ -27,14 +27,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var background : BackgroundNode?
     var labels : LabelsNode?
     var btnPause : ButtonPauseNode?
-    //var btnResume : BoostersNode?
     var car : CarNode?
     var otherCar : OtherCarNode?
     var gameStart : GameStartNode?
     var gameOver : GameOverNode?
-    var boosters : BoostersNode?
+    var pauseMenu : PauseMenuNode?
     var progress : ProgressNode?
-    var blackBullet : BlackBulletNode?
+    var bullet : BulletNode?
     var countdownNode : CountdownNode?
     var transparentPauseNode : TransparentPauseNode?
     var shieldNode : ShieldBoosterNode?
@@ -105,14 +104,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     break
                 case "load":
                     gameOver?.hide(){
-                        //self.gameStart?.show()
-                        if lifes > 0 {
-                            self.newGame()
-                        }
-                        else {
-                            self.gameStart?.show()
-                            //Indicar que no tiene vidas
-                        }
+                        if lifes > 0 {self.newGame()}
+                        else {self.gameStart?.show()}
                     }
                     break
                 case "pause":
@@ -126,21 +119,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 case "shield":
                     if !shotGunUp && !shieldUp  && qShield > 0{ // Se comprueva que no haya ningún booster activado
                         setupShieldProtection()
-                        //resume()
                     }
                     boosterTouched = true
                     break
                 case "shots":
                     if !shieldUp && !shotGunUp  && qShotGun > 0{ // Se comprueva que no haya ningún booster activado
                         setupShotsGun()
-                        //resume()
                     }
                     boosterTouched = true
                     break
                 case "returnMenu":
-                    gameOver?.hide() {
-                        self.gameStart?.show()
-                    }
+                    gameOver?.hide() {self.gameStart?.show()}
                     break
                 case "quit":
                     gameFinish()
@@ -151,14 +140,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         inSettings = false
                     }
                     else {
-                        boosters?.hide() {
+                        pauseMenu?.hide() {
                             self.gameStart!.show()
                         }
                     }
                     break
                 case "settings":
                     inSettings = true
-                    boosters?.hide()
+                    pauseMenu?.hide()
                     settingsNode?.show()
                     break
                 case "mute":
@@ -214,7 +203,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
             
         })
-        self.enumerateChildNodesWithName("BlackBullet", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
+        self.enumerateChildNodesWithName("bullet", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
             if node.position.y + node.frame.size.height < 0 {
                 node.removeFromParent()
             }
@@ -414,8 +403,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func setupBoosters(){
-        boosters = BoostersNode()
-        addChild(boosters!)
+        pauseMenu = PauseMenuNode()
+        addChild(pauseMenu!)
     }
     
     func setupSettings() {
@@ -451,9 +440,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func createShotGunNode() {
-        blackBullet = BlackBulletNode(position: CGPointMake((car?.position.x)!, (car?.position.y)!+30))
-        blackBullet?.loadPhysicsBody()
-        addChild(blackBullet!)
+        bullet = BulletNode(position: CGPointMake((car?.position.x)!, (car?.position.y)!+30))
+        bullet?.loadPhysicsBody()
+        addChild(bullet!)
     }
     
     func turnOffShotGun() {
@@ -567,7 +556,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.paused = true
         didTheGamePaused = true
         if shotGunUp {timerShotGun.invalidate()} // Si el juego se pausa, hay que parar el timer del shot gun
-        boosters?.show()
+        pauseMenu?.show()
         audioPlayer.volume = 0.2
     }
     
@@ -581,7 +570,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             timerShotGun.invalidate() // Invalidamos el tiempo para parar todos los timers, para ser más precisos habría que crear una varible en el pause() que almacene el valor del tiempo para después volver a continuar desde el mismo tiempo.
             timerShotGun = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("countdown"), userInfo: nil, repeats: true)
         } // Si el juego se reanuda, hay que reinicializar el timer
-        boosters?.hide()
+        pauseMenu?.hide()
         audioPlayer.volume = 1.0
     }
     
@@ -601,7 +590,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.enumerateChildNodesWithName("otherCar", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
             node.removeFromParent()
         })
-        self.enumerateChildNodesWithName("BlackBullet", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
+        self.enumerateChildNodesWithName("bullet", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
             node.removeFromParent()
         })
         
@@ -621,7 +610,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.enumerateChildNodesWithName("otherCar", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
             node.removeFromParent()
         })
-        self.enumerateChildNodesWithName("BlackBullet", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
+        self.enumerateChildNodesWithName("bullet", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
             node.removeFromParent()
         })
     }
@@ -647,7 +636,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func saveGameData() {
-        //print("saveGameData")
         userDefaults.setBool(true, forKey: "syncronized")
         userDefaults.setInteger(lifes, forKey: "lifes")
         userDefaults.setInteger(qShield, forKey: "shields")
@@ -660,7 +648,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func loadGameData() {
-        //print("loadGameData")
         lifes = userDefaults.integerForKey("lifes")
         qShield = userDefaults.integerForKey("shields")
         qShotGun = userDefaults.integerForKey("shots")
@@ -682,7 +669,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func loadProgress(){
-        //print("loadProgress")
         self.physicsWorld.speed = 0.0
         progress?.hidden = false
         progress?.countdown(3.0) { () -> Void in

@@ -1,5 +1,5 @@
 //
-//  BlackBulletNode.swift
+//  BulletNode.swift
 //  Crazy Speed
 //
 //  Created by Eric Garcia Ribera on 02/03/16.
@@ -8,13 +8,13 @@
 
 import SpriteKit
 
-class BlackBulletNode: SKSpriteNode {
+class BulletNode: SKSpriteNode {
     
     init(position: CGPoint) {
         let texture = SKTexture(imageNamed: "bullet")
         super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
         
-        self.name = "BlackBullet"
+        self.name = "bullet"
         self.position = position
         self.setScale(0.50)
         self.zPosition = 3

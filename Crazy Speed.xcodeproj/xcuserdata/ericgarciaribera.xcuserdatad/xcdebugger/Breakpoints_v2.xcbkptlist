@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Crazy Speed/GameScene.swift"
-            timestampString = "479127070.290543"
+            timestampString = "479128385.018059"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "543"
-            endingLineNumber = "543"
+            startingLineNumber = "532"
+            endingLineNumber = "532"
             landmarkName = "setupShieldNode()"
             landmarkType = "5">
          </BreakpointContent>

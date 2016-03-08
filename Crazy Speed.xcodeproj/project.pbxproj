@@ -23,10 +23,10 @@
 		273F5F381C884A1C00B66386 /* number3.png in Resources */ = {isa = PBXBuildFile; fileRef = 273F5F371C884A1C00B66386 /* number3.png */; };
 		273F5F3A1C884B0600B66386 /* CountdownNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273F5F391C884B0600B66386 /* CountdownNode.swift */; };
 		2746446E1C88CE2200F2FE61 /* music8bits.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2746446D1C88CE2200F2FE61 /* music8bits.mp3 */; };
-		274EE61D1BCBAFFC008C8918 /* BoostersNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274EE61C1BCBAFFC008C8918 /* BoostersNode.swift */; };
+		274EE61D1BCBAFFC008C8918 /* PauseMenuNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274EE61C1BCBAFFC008C8918 /* PauseMenuNode.swift */; };
 		274EE61F1BCBB5F3008C8918 /* shield.png in Resources */ = {isa = PBXBuildFile; fileRef = 274EE61E1BCBB5F3008C8918 /* shield.png */; };
 		276EBB511C878D14008C96F8 /* bullet_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 276EBB501C878D14008C96F8 /* bullet_black.png */; };
-		276EBB531C878D3D008C96F8 /* BlackBulletNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276EBB521C878D3D008C96F8 /* BlackBulletNode.swift */; };
+		276EBB531C878D3D008C96F8 /* BulletNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276EBB521C878D3D008C96F8 /* BulletNode.swift */; };
 		276EBB551C87A85A008C96F8 /* bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 276EBB541C87A85A008C96F8 /* bullet.png */; };
 		27C10B581C87018100829A3E /* shots.png in Resources */ = {isa = PBXBuildFile; fileRef = 27C10B571C87018100829A3E /* shots.png */; };
 		2B44CAF21BAC56D700751768 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B44CAF11BAC56D700751768 /* play.png */; };
@@ -86,10 +86,10 @@
 		273F5F371C884A1C00B66386 /* number3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = number3.png; sourceTree = "<group>"; };
 		273F5F391C884B0600B66386 /* CountdownNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownNode.swift; sourceTree = "<group>"; };
 		2746446D1C88CE2200F2FE61 /* music8bits.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music8bits.mp3; sourceTree = "<group>"; };
-		274EE61C1BCBAFFC008C8918 /* BoostersNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoostersNode.swift; sourceTree = "<group>"; };
+		274EE61C1BCBAFFC008C8918 /* PauseMenuNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PauseMenuNode.swift; sourceTree = "<group>"; };
 		274EE61E1BCBB5F3008C8918 /* shield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shield.png; sourceTree = "<group>"; };
 		276EBB501C878D14008C96F8 /* bullet_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet_black.png; sourceTree = "<group>"; };
-		276EBB521C878D3D008C96F8 /* BlackBulletNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackBulletNode.swift; sourceTree = "<group>"; };
+		276EBB521C878D3D008C96F8 /* BulletNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BulletNode.swift; sourceTree = "<group>"; };
 		276EBB541C87A85A008C96F8 /* bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet.png; sourceTree = "<group>"; };
 		27C10B571C87018100829A3E /* shots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shots.png; sourceTree = "<group>"; };
 		2B44CAF11BAC56D700751768 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
@@ -237,9 +237,9 @@
 				2B7989581BB015F600E3219A /* LabelsNode.swift */,
 				2BB5349E1BB19E1E00374E2A /* ButtonPauseNode.swift */,
 				2B79895A1BB0392500E3219A /* ButtonShopNode.swift */,
-				274EE61C1BCBAFFC008C8918 /* BoostersNode.swift */,
+				274EE61C1BCBAFFC008C8918 /* PauseMenuNode.swift */,
 				2BB534A21BB1A66300374E2A /* CarNode.swift */,
-				276EBB521C878D3D008C96F8 /* BlackBulletNode.swift */,
+				276EBB521C878D3D008C96F8 /* BulletNode.swift */,
 				2BCFABC11BB2F22E00B28D37 /* OtherCarNode.swift */,
 				2BB534A41BB1BB0400374E2A /* GameStartNode.swift */,
 				2BB534A61BB1BB1B00374E2A /* GameOverNode.swift */,
@@ -373,7 +373,7 @@
 				2BB534A31BB1A66300374E2A /* CarNode.swift in Sources */,
 				272F114A1C89965600A2AA2E /* TransparentPauseNode.swift in Sources */,
 				2B7989571BB005D700E3219A /* BackgroundNode.swift in Sources */,
-				274EE61D1BCBAFFC008C8918 /* BoostersNode.swift in Sources */,
+				274EE61D1BCBAFFC008C8918 /* PauseMenuNode.swift in Sources */,
 				2B7989591BB015F600E3219A /* LabelsNode.swift in Sources */,
 				2BB534A71BB1BB1B00374E2A /* GameOverNode.swift in Sources */,
 				2BB534971BB1472600374E2A /* Util.swift in Sources */,
@@ -382,7 +382,7 @@
 				27321EDA1C8AF8B7003D2A6F /* ShieldBoosterNode.swift in Sources */,
 				2B9B9ED21BB584DF0081556B /* ProgressNode.swift in Sources */,
 				2B9E183C1B909A0A00F7F9D3 /* GameViewController.swift in Sources */,
-				276EBB531C878D3D008C96F8 /* BlackBulletNode.swift in Sources */,
+				276EBB531C878D3D008C96F8 /* BulletNode.swift in Sources */,
 				27321EDC1C8AFDB4003D2A6F /* ShotGunBoosterNode.swift in Sources */,
 				2B9E18361B909A0A00F7F9D3 /* AppDelegate.swift in Sources */,
 				2BB534A51BB1BB0400374E2A /* GameStartNode.swift in Sources */,
