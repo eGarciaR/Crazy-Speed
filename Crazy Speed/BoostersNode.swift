@@ -69,14 +69,14 @@ class BoostersNode: SKNode {
     }
     
     
-    /*func hide(completion: () -> ()){
+    func hide(completion: () -> ()){
         let action = SKAction.moveToY(viewSize.height, duration: 0.4)
         let run = SKAction.runBlock({
             self.hidden = true
         })
         let sequence = SKAction.sequence([action, run])
         boostersNode.runAction(sequence, completion:  completion)
-    }*/
+    }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

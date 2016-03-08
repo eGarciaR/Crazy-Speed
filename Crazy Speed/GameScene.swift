@@ -39,6 +39,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var transparentPauseNode : TransparentPauseNode?
     var shieldNode : ShieldBoosterNode?
     var shotGunNode : ShotGunBoosterNode?
+    var settingsNode : SettingsNode?
     
     var highscore = 0 // mejor puntuacion
     var score = 0 // Distancia recorrida en metros
@@ -47,6 +48,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var isStarted = false
     var didTheGamePaused = false
     var boosterTouched = false
+    var inSettings = false
+    var destroyed = false
     
     var shieldUp = false
     var shotGunUp = false
@@ -78,6 +81,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         setupStart()
         setupGameOver()
         setupBoosters()
+        setupSettings()
         setupProgress()
         setupSounds()
         setupTransparentPauseNode()
@@ -138,11 +142,33 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         self.gameStart?.show()
                     }
                     break
-                /*case "quit":
-                    boosters?.hide()
+                case "quit":
                     gameFinish()
-                    self.gameStart!.showFast()
-                    break*/
+                    paused = false
+                    if inSettings {
+                        settingsNode?.hide()
+                        self.gameStart!.show()
+                        inSettings = false
+                    }
+                    else {
+                        boosters?.hide() {
+                            self.gameStart!.show()
+                        }
+                    }
+                    break
+                case "settings":
+                    inSettings = true
+                    boosters?.hide()
+                    settingsNode?.show()
+                    break
+                case "mute":
+                    audioPlayer.play()
+                    settingsNode?.noMute()
+                    break
+                case "noMute":
+                    audioPlayer.stop()
+                    settingsNode?.mute()
+                    break
                 default:
                     break
                 }
@@ -212,7 +238,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if firstBody.categoryBitMask == kCCOtherCarsCategory && secondBody.categoryBitMask == kCCOurCarCategory {
             self.addExplosion(firstBody.node!.position)
             firstBody.node?.removeFromParent()
-            if !shieldUp {isGameOver()}
+            if !shieldUp {
+                secondBody.node?.removeFromParent()
+                destroyed = true
+                isGameOver()
+            }
         }
         if firstBody.categoryBitMask == kCCOtherCarsCategory && secondBody.categoryBitMask == kCCBulletCategory {
             if firstBody.node != nil { self.addExplosion(firstBody.node!.position)} // Hay que mirar que el nodo no sea nulo.
@@ -388,6 +418,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(boosters!)
     }
     
+    func setupSettings() {
+        settingsNode = SettingsNode()
+        addChild(settingsNode!)
+    }
+    
     func setupProgress(){
         progress = ProgressNode()
         progress?.radius = 40.0
@@ -537,6 +572,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func resume() {
+        if inSettings {
+            inSettings = false
+            settingsNode?.hide()
+        }
         self.paused = false
         if shotGunUp {
             timerShotGun.invalidate() // Invalidamos el tiempo para parar todos los timers, para ser más precisos habría que crear una varible en el pause() que almacene el valor del tiempo para después volver a continuar desde el mismo tiempo.
@@ -574,11 +613,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         turnOffShotGun()
         
-        lifes--
-        labels?.updateLifes(lifes)
-        
-        highscore = ((score+minSpeed) > highscore ) ? (score+minSpeed) : highscore
-        labels?.updateBest(highscore)
+        //highscore = ((score+minSpeed) > highscore ) ? (score+minSpeed) : highscore
+        //labels?.updateBest(highscore)
         
         saveGameData()
         
@@ -593,6 +629,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func newGame() {
         isStarted = true
         
+        if destroyed {
+            setupCar()
+            destroyed = false
+        }
+        
         mySideCarsSpeed = 120
         otherSideCarsSpeed = 300
         background?.speedBackground = 5
@@ -601,7 +642,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         timeSinceCarAdded = 0
         addCarTimeInterval = 1.5
         totalGameTime = 0
-        
+        audioPlayer.volume = 1.0 // Si se sale del menú de pausa o settings hay que volver a activar el volumen al empezar partida
         score = 0
     }
     
