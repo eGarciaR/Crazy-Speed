@@ -393,7 +393,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func setupStart(){
         gameStart = GameStartNode()
-        gameStart?.timeNode.hidden = lifes != 0
+        gameStart?.timeNode.hidden = lifes >= 5
         addChild(gameStart!)
     }
     
@@ -504,12 +504,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func setupSounds(){
-        /*if #available(iOS 9.0, *) {
-            let backgroundMusic = SKAudioNode(fileNamed: "music8bits.mp3")
-            self.addChild(backgroundMusic)
-        } else {
-            // Fallback on earlier versions
-        }*/
         let path = NSBundle.mainBundle().pathForResource("music8bits.mp3", ofType:nil)!
         let url = NSURL(fileURLWithPath: path)
         do {
@@ -597,13 +591,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gameOver?.show()
     }
     
-    func gameFinish() { // Provisional hasta ver cuando ejecutar una acción al pausar el juego
+    func gameFinish() {
         isStarted = false
         
         turnOffShotGun()
-        
-        //highscore = ((score+minSpeed) > highscore ) ? (score+minSpeed) : highscore
-        //labels?.updateBest(highscore)
         
         saveGameData()
         
