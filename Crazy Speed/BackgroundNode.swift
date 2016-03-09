@@ -9,13 +9,13 @@ class BackgroundNode : SKNode {
     override init() {
         super.init()
 
-        bg1 = SKSpriteNode(imageNamed: "bg1")
+        bg1 = SKSpriteNode(imageNamed: "background")
         bg1.anchorPoint = CGPointZero
         bg1.position = CGPointZero
         bg1.size = viewSize
         addChild(bg1!)
         
-        bg2 = SKSpriteNode(imageNamed: "bg1")
+        bg2 = SKSpriteNode(imageNamed: "background")
         bg2.anchorPoint = CGPointZero
         bg2.position = CGPointMake(0, bg1.size.height)
         bg2.size = viewSize

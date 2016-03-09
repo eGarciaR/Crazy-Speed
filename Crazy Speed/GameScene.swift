@@ -522,7 +522,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func setupShieldNode() {
-        shieldNode = ShieldBoosterNode(position: CGPointMake(self.size.width/2+self.size.width/3+self.size.width/9, self.size.height/2))
+        //shieldNode = ShieldBoosterNode(position: CGPointMake(self.size.width/2+self.size.width/3+self.size.width/9, self.size.height/2))
+        shieldNode = ShieldBoosterNode(position: CGPointMake(self.size.width*0.935, self.size.height/2))
         self.addChild(shieldNode!)
     }
     

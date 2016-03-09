@@ -19,8 +19,9 @@ class ShotGunBoosterNode: SKSpriteNode {
         self.position = position
         self.zPosition = 4
         if UIScreen.mainScreen().bounds.width <= 400 {self.setScale(0.60)}
-        else if UIScreen.mainScreen().bounds.width > 400 && UIScreen.mainScreen().bounds.width < 500 {self.setScale(0.75)}
+        else if UIScreen.mainScreen().bounds.width > 400 && UIScreen.mainScreen().bounds.width < 500 {self.setScale(0.9)}
         else {self.setScale(1)}
+        self.zRotation = CGFloat(180.1/M_PI)
     }
     
     required init?(coder aDecoder: NSCoder) {

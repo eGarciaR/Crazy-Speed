@@ -18,7 +18,7 @@ class SettingsNode: SKNode {
         super.init()
         
         settingsNode = SKSpriteNode(imageNamed: "layer")
-        settingsNode.size = CGSizeMake(viewSize.width*0.9, viewSize.height*0.8)
+        settingsNode.size = CGSizeMake(viewSize.width*0.8, viewSize.height*0.75)
         settingsNode.zPosition = 7
         addChild(settingsNode)
         
