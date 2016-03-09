@@ -52,6 +52,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var shieldUp = false
     var shotGunUp = false
+    var music = true
     var boosterTime = 0
     var timerShield = NSTimer()
     var timerShotGun = NSTimer()
@@ -152,12 +153,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     self.settingsNode?.show()
                     break
                 case "mute":
-                    audioPlayer.play()
-                    settingsNode?.noMute()
+                    music(true)
                     break
                 case "noMute":
-                    audioPlayer.stop()
-                    settingsNode?.mute()
+                    music(false)
                     break
                 default:
                     break
@@ -411,6 +410,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func setupSettings() {
         settingsNode = SettingsNode()
         addChild(settingsNode!)
+        if music {settingsNode?.noMute()}
+        else {settingsNode?.mute()}
     }
     
     func setupProgress(){
@@ -511,7 +512,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let sound = try AVAudioPlayer(contentsOfURL: url)
             audioPlayer = sound
             audioPlayer.numberOfLoops = -1 // Repetir infinitamente
-            sound.play()
+            if music {sound.play()}
         } catch {
             // couldn't load file :(
         }
@@ -546,6 +547,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             SKAction.removeFromParent()
             ])
         explosion.runAction(removeExplosion)
+    }
+    
+    func music(value: Bool) {
+        if value {
+            audioPlayer.play()
+            settingsNode?.noMute()
+            music = true
+            saveGameData()
+        }
+        else {
+            audioPlayer.stop()
+            settingsNode?.mute()
+            music = false
+            saveGameData()
+        }
     }
     
     func pause() {
@@ -633,6 +649,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         userDefaults.setInteger(lifes, forKey: "lifes")
         userDefaults.setInteger(qShield, forKey: "shields")
         userDefaults.setInteger(qShotGun, forKey: "shots")
+        userDefaults.setBool(music, forKey: "music")
         userDefaults.setInteger(highscore, forKey: "highscore")
         userDefaults.setObject(timeOfLastLife, forKey: "timeOfLastLife")
         userDefaults.setObject(timeOfLastShield, forKey: "timeOfLastShield")
@@ -644,6 +661,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         lifes = userDefaults.integerForKey("lifes")
         qShield = userDefaults.integerForKey("shields")
         qShotGun = userDefaults.integerForKey("shots")
+        music = userDefaults.boolForKey("music")
         highscore = userDefaults.integerForKey("highscore")
         timeOfLastLife = userDefaults.objectForKey("timeOfLastLife") as? CFAbsoluteTime
         timeOfLastShield = userDefaults.objectForKey("timeOfLastShield") as? CFAbsoluteTime
@@ -657,6 +675,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             lifes = 5
             qShield = 5
             qShotGun = 5
+            music = true
             saveGameData()
         }
     }
