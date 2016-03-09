@@ -24,14 +24,21 @@ class GameStartNode : SKNode {
         
         let btnStart = SKSpriteNode(imageNamed: "play")
         btnStart.name = "play"
-        btnStart.position = CGPointMake(startNode.size.width*(-0.25), -(startNode.size.height*0.1))
+        btnStart.position = CGPointMake(startNode.size.width*(-0.3), -(startNode.size.height*0.1))
         btnStart.setScale(0.75)
         btnStart.zPosition = 8
         startNode.addChild(btnStart)
         
+        let btnSettings = SKSpriteNode(imageNamed: "settings")
+        btnSettings.name = "settings"
+        btnSettings.position = CGPointMake(0, -(startNode.size.height*0.1))
+        btnSettings.setScale(0.75)
+        btnSettings.zPosition = 8
+        startNode.addChild(btnSettings)
+        
         let btnShop = SKSpriteNode(imageNamed: "shop")
         btnShop.name = "shop"
-        btnShop.position = CGPointMake(startNode.size.width*0.25, -(startNode.size.height*0.1))
+        btnShop.position = CGPointMake(startNode.size.width*0.3, -(startNode.size.height*0.1))
         btnShop.setScale(0.75)
         btnShop.zPosition = 8
         startNode.addChild(btnShop)
@@ -64,6 +71,10 @@ class GameStartNode : SKNode {
         })
         let sequence = SKAction.sequence([fade, run])
         runAction(sequence, completion: completion)
+    }
+    
+    func hide() {
+        hidden = true
     }
     
     required init?(coder aDecoder: NSCoder) {

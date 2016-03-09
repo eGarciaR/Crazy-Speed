@@ -147,8 +147,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     break
                 case "settings":
                     inSettings = true
-                    pauseMenu?.hide()
-                    settingsNode?.show()
+                    //pauseMenu?.hide()
+                    gameStart?.hide()
+                    self.settingsNode?.show()
                     break
                 case "mute":
                     audioPlayer.play()

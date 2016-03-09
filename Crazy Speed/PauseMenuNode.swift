@@ -33,12 +33,12 @@ class PauseMenuNode: SKNode {
         btnResume.zPosition = 7
         pauseNode.addChild(btnResume)
         
-        let btnSettings = SKSpriteNode(imageNamed: "settings")
+        /*let btnSettings = SKSpriteNode(imageNamed: "settings")
         btnSettings.name = "settings"
         btnSettings.position = CGPointMake((-pauseNode.size.width/3), -(pauseNode.size.height*0.2))
         btnSettings.setScale(0.75)
         btnSettings.zPosition = 7
-        pauseNode.addChild(btnSettings)
+        pauseNode.addChild(btnSettings)*/
         
         let btnReturnMenu = SKSpriteNode(imageNamed: "quit")
         btnReturnMenu.name = "quit"

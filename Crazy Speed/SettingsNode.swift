@@ -29,16 +29,16 @@ class SettingsNode: SKNode {
         title.zPosition = 7
         settingsNode.addChild(title)
         
-        let btnResume = SKSpriteNode(imageNamed: "play")
+        /*let btnResume = SKSpriteNode(imageNamed: "play")
         btnResume.name = "resume"
         btnResume.position = CGPointMake(0, -(settingsNode.size.height*0.4))
         btnResume.setScale(0.75)
         btnResume.zPosition = 7
-        settingsNode.addChild(btnResume)
+        settingsNode.addChild(btnResume)*/
         
         let btnReturnMenu = SKSpriteNode(imageNamed: "quit")
         btnReturnMenu.name = "quit"
-        btnReturnMenu.position = CGPointMake(settingsNode.size.width/3, -(settingsNode.size.height*0.4))
+        btnReturnMenu.position = CGPointMake(0, -(settingsNode.size.height*0.4))
         btnReturnMenu.setScale(0.75)
         btnReturnMenu.zPosition = 7
         settingsNode.addChild(btnReturnMenu)
@@ -64,9 +64,9 @@ class SettingsNode: SKNode {
     
     func show() {
         hidden = false
-        settingsNode.position = CGPointMake(viewSize.width/2, viewSize.height/2)
-        //let action = SKAction.moveToY(viewSize.height/2, duration: 5.0)
-        //boostersNode.runAction(action)
+        settingsNode.position = CGPointMake(viewSize.width/2, viewSize.height)
+        let action = SKAction.moveToY(viewSize.height/2, duration: 0.6)
+        settingsNode.runAction(action)
     }
     
     func hide() {
