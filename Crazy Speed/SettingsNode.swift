@@ -29,13 +29,6 @@ class SettingsNode: SKNode {
         title.zPosition = 7
         settingsNode.addChild(title)
         
-        /*let btnResume = SKSpriteNode(imageNamed: "play")
-        btnResume.name = "resume"
-        btnResume.position = CGPointMake(0, -(settingsNode.size.height*0.4))
-        btnResume.setScale(0.75)
-        btnResume.zPosition = 7
-        settingsNode.addChild(btnResume)*/
-        
         let btnReturnMenu = SKSpriteNode(imageNamed: "quit")
         btnReturnMenu.name = "quit"
         btnReturnMenu.position = CGPointMake(0, -(settingsNode.size.height*0.4))
@@ -65,7 +58,7 @@ class SettingsNode: SKNode {
     func show() {
         hidden = false
         settingsNode.position = CGPointMake(viewSize.width/2, viewSize.height)
-        let action = SKAction.moveToY(viewSize.height/2, duration: 0.6)
+        let action = SKAction.moveToY(viewSize.height/2, duration: 0.5)
         settingsNode.runAction(action)
     }
     

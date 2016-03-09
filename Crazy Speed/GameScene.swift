@@ -34,11 +34,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var pauseMenu : PauseMenuNode?
     var progress : ProgressNode?
     var bullet : BulletNode?
-    var countdownNode : CountdownNode?
     var transparentPauseNode : TransparentPauseNode?
     var shieldNode : ShieldBoosterNode?
     var shotGunNode : ShotGunBoosterNode?
     var settingsNode : SettingsNode?
+    var storeNode : StoreNode?
     
     var highscore = 0 // mejor puntuacion
     var score = 0 // Distancia recorrida en metros
@@ -48,6 +48,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var didTheGamePaused = false
     var boosterTouched = false
     var inSettings = false
+    var inStore = false
     var destroyed = false
     
     var shieldUp = false
@@ -82,6 +83,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         setupGameOver()
         setupBoosters()
         setupSettings()
+        setupStore()
         setupProgress()
         setupSounds()
         setupTransparentPauseNode()
@@ -98,16 +100,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if let name = node.name as String? {
                 switch name {
                 case "play":
-                    paused = false
-                    if lifes > 0 {
-                        gameStart?.hide(){ self.newGame() }
-                    }
+                    playAction()
                     break
                 case "load":
-                    gameOver?.hide(){
-                        if lifes > 0 {self.newGame()}
-                        else {self.gameStart?.show()}
-                    }
+                    loadAction()
                     break
                 case "pause":
                     if isStarted{pause()}
@@ -118,39 +114,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     if isStarted{resume()}
                     break
                 case "shield":
-                    if !shotGunUp && !shieldUp  && qShield > 0{ // Se comprueva que no haya ningún booster activado
-                        setupShieldProtection()
-                    }
-                    boosterTouched = true
+                    shieldAction()
                     break
                 case "shots":
-                    if !shieldUp && !shotGunUp  && qShotGun > 0{ // Se comprueva que no haya ningún booster activado
-                        setupShotsGun()
-                    }
-                    boosterTouched = true
+                    shotsAction()
                     break
                 case "returnMenu":
                     gameOver?.hide() {self.gameStart?.show()}
                     break
                 case "quit":
-                    gameFinish()
-                    paused = false
-                    if inSettings {
-                        settingsNode?.hide()
-                        self.gameStart!.show()
-                        inSettings = false
-                    }
-                    else {
-                        pauseMenu?.hide() {
-                            self.gameStart!.show()
-                        }
-                    }
+                    quitAction()
                     break
                 case "settings":
-                    inSettings = true
-                    //pauseMenu?.hide()
-                    gameStart?.hide()
-                    self.settingsNode?.show()
+                    settingsAction()
+                    break
+                case "shop":
+                    shopAction()
                     break
                 case "mute":
                     music(true)
@@ -344,9 +323,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func updateCarTimeInterval(currentTime: CFTimeInterval){
         if ((lastUpdateTimeInterval) != nil) { totalGameTime = totalGameTime + currentTime - lastUpdateTimeInterval! }
-        if (self.totalGameTime > 120) {
+        if (self.totalGameTime > 150) {
             addCarTimeInterval = 0.2
-        } else if (self.totalGameTime > 100) {
+        } else if (self.totalGameTime > 120) {
             addCarTimeInterval = 0.25
         } else if (self.totalGameTime > 80) {
             addCarTimeInterval = 0.3
@@ -414,6 +393,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         else {settingsNode?.mute()}
     }
     
+    func setupStore() {
+        storeNode = StoreNode()
+        addChild(storeNode!)
+    }
+    
     func setupProgress(){
         progress = ProgressNode()
         progress?.radius = 40.0
@@ -453,6 +437,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.enumerateChildNodesWithName("countdownNode", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
             node.removeFromParent()
         })
+        labels?.hideCountdownNumbers()
     }
     
     func turnOffShieldProtection() {
@@ -462,47 +447,36 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.enumerateChildNodesWithName("countdownNode", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
             node.removeFromParent()
         })
+        labels?.hideCountdownNumbers()
     }
     
     func countdown() {
         if !paused {boosterTime++}
         if shieldUp {
-            if boosterTime == 12 {setupCountdownNode(3)}
+            if boosterTime == 12 {
+                labels?.showCountdownNumbers()
+                labels?.updateCountdownNumbers(3)
+            }
             else if boosterTime == 13 {
-                self.enumerateChildNodesWithName("countdownNode", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
-                    node.removeFromParent()
-                })
-                setupCountdownNode(2)
+                labels?.updateCountdownNumbers(2)
             }
             else if boosterTime == 14 {
-                self.enumerateChildNodesWithName("countdownNode", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
-                    node.removeFromParent()
-                })
-                setupCountdownNode(1)
+                labels?.updateCountdownNumbers(1)
             }
         }
         if shotGunUp {
             createShotGunNode()
-            if boosterTime == 30 {setupCountdownNode(3)}
+            if boosterTime == 30 {
+                labels?.showCountdownNumbers()
+                labels?.updateCountdownNumbers(3)
+            }
             else if boosterTime == 33 {
-                self.enumerateChildNodesWithName("countdownNode", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
-                    node.removeFromParent()
-                })
-                setupCountdownNode(2)
+                labels?.updateCountdownNumbers(2)
             }
             else if boosterTime == 36 {
-                self.enumerateChildNodesWithName("countdownNode", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
-                    node.removeFromParent()
-                })
-                setupCountdownNode(1)
+                labels?.updateCountdownNumbers(1)
             }
         }
-    }
-    
-    func setupCountdownNode(imageNode: Int) {
-        countdownNode = CountdownNode(image: imageNode, position: CGPointMake(self.size.width/2, self.size.height/2))
-        self.addChild(countdownNode!)
-        
     }
     
     func setupSounds(){
@@ -535,7 +509,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func addExplosion(position: CGPoint) {
-        
         let explosionPath = NSBundle.mainBundle().pathForResource("CarExplosion", ofType: "sks")
         let explosion = NSKeyedUnarchiver.unarchiveObjectWithFile(explosionPath!) as! SKEmitterNode
         explosion.position = position
@@ -687,6 +660,68 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.progress?.hidden = true
             self.physicsWorld.speed = 1.0
             self.isStarted = true
+        }
+    }
+    
+    func playAction() {
+        paused = false
+        if lifes > 0 {
+            gameStart?.hide(){ self.newGame() }
+        }
+    }
+    
+    func loadAction() {
+        gameOver?.hide(){
+            if lifes > 0 {self.newGame()}
+            else {self.gameStart?.show()}
+        }
+    }
+    
+    func shieldAction() {
+        if !shotGunUp && !shieldUp  && qShield > 0{ // Se comprueva que no haya ningún booster activado
+            setupShieldProtection()
+        }
+        boosterTouched = true
+    }
+    
+    func shotsAction() {
+        if !shieldUp && !shotGunUp  && qShotGun > 0{ // Se comprueva que no haya ningún booster activado
+            setupShotsGun()
+        }
+        boosterTouched = true
+    }
+    
+    func settingsAction() {
+        inSettings = true
+        gameStart?.hide()
+        self.settingsNode?.show()
+    }
+    
+    func shopAction() {
+        inStore = true
+        gameStart?.hide()
+        self.storeNode?.show()
+    }
+    
+    func quitAction() {
+        gameFinish()
+        paused = false
+        if inSettings {
+            settingsNode?.hide()
+            self.gameStart!.show()
+            inSettings = false
+        }
+        else if inStore {
+            storeNode?.hide()
+            self.gameStart?.show()
+            inStore = false
+        }
+        else {
+            pauseMenu?.hide() {
+                self.gameStart!.show()
+            }
+            if shieldUp {turnOffShieldProtection()}
+            else if shotGunUp {turnOffShotGun()}
         }
     }
     

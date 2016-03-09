@@ -6,6 +6,7 @@ class LabelsNode : SKNode {
     var best: SKLabelNode!
     var quantityShield: SKLabelNode!
     var quantityShot: SKLabelNode!
+    var countdownNumbers: SKLabelNode!
     
     override init() {
         super.init()
@@ -52,6 +53,26 @@ class LabelsNode : SKNode {
         quantityShot.position = CGPointMake(viewSize.width/16, viewSize.height/2-viewSize.height/14)
         quantityShot.zPosition = 6
         addChild(quantityShot)
+        
+        countdownNumbers = SKLabelNode(fontNamed: font)
+        countdownNumbers.fontSize = viewSize.width/2
+        //countdownNumbers.fontColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
+        countdownNumbers.position = CGPointMake(viewSize.width/2, viewSize.height*0.4)
+        countdownNumbers.zPosition = 6
+        addChild(countdownNumbers)
+        countdownNumbers.hidden = true
+    }
+    
+    func hideCountdownNumbers() {
+        countdownNumbers.hidden = true
+    }
+    
+    func showCountdownNumbers() {
+        countdownNumbers.hidden = false
+    }
+    
+    func updateCountdownNumbers(n: Int) {
+        countdownNumbers.text = String(n)
     }
     
     func updateLifes(n: Int) {
