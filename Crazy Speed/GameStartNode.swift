@@ -45,9 +45,9 @@ class GameStartNode : SKNode {
         
         timeNode = SKLabelNode(fontNamed: "Arial")
         timeNode.fontSize = CGFloat(viewSize.width / 18.75)
-        timeNode.position = CGPointMake(-(startNode.size.width*0.1), -(startNode.size.height*0.4))
+        timeNode.position = CGPointMake(0, -(startNode.size.height*0.4))
         timeNode.zPosition = 8
-        timeNode.horizontalAlignmentMode = .Left
+        //timeNode.horizontalAlignmentMode = .Left
         startNode.addChild(timeNode)
     }
     

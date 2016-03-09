@@ -18,14 +18,14 @@ class SettingsNode: SKNode {
         super.init()
         
         settingsNode = SKSpriteNode(imageNamed: "layer")
-        settingsNode.size = CGSizeMake(viewSize.width*0.8, viewSize.height*0.75)
+        settingsNode.size = CGSizeMake(viewSize.width, viewSize.height/2)
         settingsNode.zPosition = 7
         addChild(settingsNode)
         
         let title = SKLabelNode(fontNamed: "Arial")
         title.text = "SETTINGS"
         title.fontSize = CGFloat(viewSize.width / 10.5)
-        title.position = CGPointMake(0, settingsNode.size.height*0.3)
+        title.position = CGPointMake(0, settingsNode.size.height*0.35)
         title.zPosition = 7
         settingsNode.addChild(title)
         
@@ -46,7 +46,7 @@ class SettingsNode: SKNode {
         btnMute = SKSpriteNode(imageNamed: "mute")
         btnMute.name = "mute"
         btnMute.position = CGPointMake(0, 0)
-        btnMute.setScale(1.5)
+        btnMute.setScale(1.2)
         btnMute.zPosition = 7
         btnMute.hidden = true
         settingsNode.addChild(btnMute)
@@ -54,7 +54,7 @@ class SettingsNode: SKNode {
         btnNoMute = SKSpriteNode(imageNamed: "noMute")
         btnNoMute.name = "noMute"
         btnNoMute.position = CGPointMake(0, 0)
-        btnNoMute.setScale(1.5)
+        btnNoMute.setScale(1.2)
         btnNoMute.zPosition = 7
         btnNoMute.hidden = false
         settingsNode.addChild(btnNoMute)
