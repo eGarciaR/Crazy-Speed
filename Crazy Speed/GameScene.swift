@@ -545,6 +545,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         audioPlayer.volume = 0.2
     }
     
+    func pauseWhenAppInterrupts() {
+        // Si salimos de la app en settings o store no pausamos porque ya esta pausado
+        if !inSettings && !inStore {pause()}
+    }
+    
     func resume() {
         if inSettings {
             inSettings = false
