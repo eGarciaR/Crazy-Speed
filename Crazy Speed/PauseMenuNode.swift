@@ -39,8 +39,6 @@ class PauseMenuNode: SKNode {
     func show() {
         hidden = false
         pauseNode.position = CGPointMake(viewSize.width/2, viewSize.height/2)
-        //let action = SKAction.moveToY(viewSize.height/2, duration: 5.0)
-        //pauseNode.runAction(action)
     }
     
     func hide() {

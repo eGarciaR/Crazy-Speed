@@ -35,7 +35,8 @@ class BackgroundNode : SKNode {
     }
     
     func updateSpeed(){
-        if speedBackground < 30 { speedBackground++ }
+        if speedBackground < 20 { speedBackground++ }
+        print(speedBackground)
     }
     
     required init?(coder aDecoder: NSCoder) {
