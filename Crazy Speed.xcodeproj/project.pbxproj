@@ -27,6 +27,9 @@
 		276EBB511C878D14008C96F8 /* bullet_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 276EBB501C878D14008C96F8 /* bullet_black.png */; };
 		276EBB531C878D3D008C96F8 /* BulletNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276EBB521C878D3D008C96F8 /* BulletNode.swift */; };
 		276EBB551C87A85A008C96F8 /* bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 276EBB541C87A85A008C96F8 /* bullet.png */; };
+		27C62B101C9820CA009DEB58 /* heart5Lifes.png in Resources */ = {isa = PBXBuildFile; fileRef = 27C62B0F1C9820CA009DEB58 /* heart5Lifes.png */; };
+		27C62B121C982126009DEB58 /* heart10Lifes.png in Resources */ = {isa = PBXBuildFile; fileRef = 27C62B111C982126009DEB58 /* heart10Lifes.png */; };
+		27C62B141C98212B009DEB58 /* heart20Lifes.png in Resources */ = {isa = PBXBuildFile; fileRef = 27C62B131C98212B009DEB58 /* heart20Lifes.png */; };
 		2B44CAF21BAC56D700751768 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B44CAF11BAC56D700751768 /* play.png */; };
 		2B44CAF61BAC56E400751768 /* load.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B44CAF31BAC56E400751768 /* load.png */; };
 		2B44CAF71BAC56E400751768 /* bolt.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B44CAF41BAC56E400751768 /* bolt.png */; };
@@ -88,6 +91,9 @@
 		276EBB501C878D14008C96F8 /* bullet_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet_black.png; sourceTree = "<group>"; };
 		276EBB521C878D3D008C96F8 /* BulletNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BulletNode.swift; sourceTree = "<group>"; };
 		276EBB541C87A85A008C96F8 /* bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet.png; sourceTree = "<group>"; };
+		27C62B0F1C9820CA009DEB58 /* heart5Lifes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart5Lifes.png; sourceTree = "<group>"; };
+		27C62B111C982126009DEB58 /* heart10Lifes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart10Lifes.png; sourceTree = "<group>"; };
+		27C62B131C98212B009DEB58 /* heart20Lifes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart20Lifes.png; sourceTree = "<group>"; };
 		2B44CAF11BAC56D700751768 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		2B44CAF31BAC56E400751768 /* load.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = load.png; sourceTree = "<group>"; };
 		2B44CAF41BAC56E400751768 /* bolt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bolt.png; sourceTree = "<group>"; };
@@ -180,6 +186,9 @@
 			children = (
 				27345FBD1C8C33B9002413A0 /* settings.png */,
 				273E292A1C905162006AF774 /* shield.png */,
+				27C62B131C98212B009DEB58 /* heart20Lifes.png */,
+				27C62B111C982126009DEB58 /* heart10Lifes.png */,
+				27C62B0F1C9820CA009DEB58 /* heart5Lifes.png */,
 				2726A8E01B98FE3D00C4D522 /* spark.png */,
 				273909AB1C8EDE2400611662 /* noMute.png */,
 				273909AC1C8EDE2400611662 /* mute.png */,
@@ -329,9 +338,11 @@
 				2B44CAF21BAC56D700751768 /* play.png in Resources */,
 				2B5F2D851BA2DDD800F436C1 /* main.png in Resources */,
 				2B9E18511B90B33800F7F9D3 /* bg.png in Resources */,
+				27C62B101C9820CA009DEB58 /* heart5Lifes.png in Resources */,
 				2B9E18441B909A0A00F7F9D3 /* LaunchScreen.storyboard in Resources */,
 				27321EDE1C8B026F003D2A6F /* pause.png in Resources */,
 				273909AE1C8EDE2400611662 /* mute.png in Resources */,
+				27C62B141C98212B009DEB58 /* heart20Lifes.png in Resources */,
 				2B5F2D831BA2DDD800F436C1 /* launch4@2x.png in Resources */,
 				2B5F2D841BA2DDD800F436C1 /* launch5@2x.png in Resources */,
 				2B5541CA1B949B5A0078DA09 /* truck.png in Resources */,
@@ -343,6 +354,7 @@
 				273E29291C904F0E006AF774 /* shots.png in Resources */,
 				2B5541C71B949B5A0078DA09 /* pickup.png in Resources */,
 				273E292B1C905162006AF774 /* shield.png in Resources */,
+				27C62B121C982126009DEB58 /* heart10Lifes.png in Resources */,
 				2B5541C21B949B510078DA09 /* beetle.png in Resources */,
 				276EBB511C878D14008C96F8 /* bullet_black.png in Resources */,
 				2B9E183F1B909A0A00F7F9D3 /* Main.storyboard in Resources */,

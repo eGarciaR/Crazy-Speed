@@ -137,6 +137,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 case "noMute":
                     music(false)
                     break
+                case "add5Lifes":
+                    //quitAction()
+                    addBoughtLifes(5);
+                    break
+                case "add10Lifes":
+                    //quitAction()
+                    addBoughtLifes(10);
+                    break
+                case "add20Lifes":
+                    //quitAction()
+                    addBoughtLifes(20);
+                    break
                 default:
                     break
                 }
@@ -289,6 +301,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             timeOfLastLife = CFAbsoluteTimeGetCurrent()
         }
+    }
+    
+    func addBoughtLifes(lifesAdded: Int) {
+        lifes += lifesAdded
+        labels?.updateLifes(lifes)
+        saveGameData()
     }
     
     func addShield() {
