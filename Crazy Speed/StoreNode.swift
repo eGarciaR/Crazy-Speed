@@ -16,7 +16,7 @@ class StoreNode: SKNode {
         super.init()
         
         storeNode = SKSpriteNode(imageNamed: "layer")
-        storeNode.size = CGSizeMake(viewSize.width, viewSize.height/2)
+        storeNode.size = CGSizeMake(viewSize.width, viewSize.height*0.6)
         storeNode.zPosition = 7
         addChild(storeNode)
         
@@ -37,27 +37,41 @@ class StoreNode: SKNode {
         let buyLifes = SKLabelNode(fontNamed: "Arial")
         buyLifes.text = "Buy lifes:"
         buyLifes.fontSize = CGFloat(viewSize.width / 18.5)
-        buyLifes.position = CGPointMake(-(storeNode.size.width*0.35), storeNode.size.height*0.20)
+        buyLifes.position = CGPointMake(-(storeNode.size.width*0.35), storeNode.size.height*0.25)
         buyLifes.zPosition = 7
         storeNode.addChild(buyLifes)
         
+        let buyShield = SKLabelNode(fontNamed: "Arial")
+        buyShield.text = "Buy shield:"
+        buyShield.fontSize = CGFloat(viewSize.width / 18.5)
+        buyShield.position = CGPointMake(-(storeNode.size.width*0.35), -(storeNode.size.height*0.00))
+        buyShield.zPosition = 7
+        storeNode.addChild(buyShield)
+        
+        let buyAmmo = SKLabelNode(fontNamed: "Arial")
+        buyAmmo.text = "Buy ammo:"
+        buyAmmo.fontSize = CGFloat(viewSize.width / 18.5)
+        buyAmmo.position = CGPointMake(-(storeNode.size.width*0.35), -(storeNode.size.height*0.25))
+        buyAmmo.zPosition = 7
+        storeNode.addChild(buyAmmo)
+        
         let btn5Lifes = SKSpriteNode(imageNamed: "heart5Lifes")
         btn5Lifes.name = "add5Lifes"
-        btn5Lifes.position = CGPointMake(-(storeNode.size.width*0.10), storeNode.size.height*0.20)
+        btn5Lifes.position = CGPointMake(-(storeNode.size.width*0.10), storeNode.size.height*0.25)
         btn5Lifes.setScale(0.95)
         btn5Lifes.zPosition = 7
         storeNode.addChild(btn5Lifes)
         
         let btn10Lifes = SKSpriteNode(imageNamed: "heart10Lifes")
         btn10Lifes.name = "add10Lifes"
-        btn10Lifes.position = CGPointMake(storeNode.size.width*0.10, storeNode.size.height*0.20)
+        btn10Lifes.position = CGPointMake(storeNode.size.width*0.10, storeNode.size.height*0.25)
         btn10Lifes.setScale(1.1)
         btn10Lifes.zPosition = 7
         storeNode.addChild(btn10Lifes)
         
         let btn20Lifes = SKSpriteNode(imageNamed: "heart20Lifes")
         btn20Lifes.name = "add20Lifes"
-        btn20Lifes.position = CGPointMake(storeNode.size.width*0.33, storeNode.size.height*0.20)
+        btn20Lifes.position = CGPointMake(storeNode.size.width*0.33, storeNode.size.height*0.25)
         btn20Lifes.setScale(1.4)
         btn20Lifes.zPosition = 7
         storeNode.addChild(btn20Lifes)
