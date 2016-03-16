@@ -76,6 +76,48 @@ class StoreNode: SKNode {
         btn20Lifes.zPosition = 7
         storeNode.addChild(btn20Lifes)
         
+        let btn5Shield = SKSpriteNode(imageNamed: "shield5")
+        btn5Shield.name = "add5Shield"
+        btn5Shield.position = CGPointMake(-(storeNode.size.width*0.10), storeNode.size.height*0.00)
+        btn5Shield.setScale(0.95)
+        btn5Shield.zPosition = 7
+        storeNode.addChild(btn5Shield)
+        
+        let btn10Shield = SKSpriteNode(imageNamed: "shield10")
+        btn10Shield.name = "add10Shield"
+        btn10Shield.position = CGPointMake(storeNode.size.width*0.10, storeNode.size.height*0.00)
+        btn10Shield.setScale(1.1)
+        btn10Shield.zPosition = 7
+        storeNode.addChild(btn10Shield)
+        
+        let btn20Shield = SKSpriteNode(imageNamed: "shield20")
+        btn20Shield.name = "add20Shield"
+        btn20Shield.position = CGPointMake(storeNode.size.width*0.33, storeNode.size.height*0.00)
+        btn20Shield.setScale(1.4)
+        btn20Shield.zPosition = 7
+        storeNode.addChild(btn20Shield)
+        
+        let btn5Shots = SKSpriteNode(imageNamed: "shots5")
+        btn5Shots.name = "add5Shots"
+        btn5Shots.position = CGPointMake(-(storeNode.size.width*0.10), -(storeNode.size.height*0.25))
+        btn5Shots.setScale(0.95)
+        btn5Shots.zPosition = 7
+        storeNode.addChild(btn5Shots)
+        
+        let btn10Shots = SKSpriteNode(imageNamed: "shots10")
+        btn10Shots.name = "add10Shots"
+        btn10Shots.position = CGPointMake(storeNode.size.width*0.10, -(storeNode.size.height*0.25))
+        btn10Shots.setScale(1.1)
+        btn10Shots.zPosition = 7
+        storeNode.addChild(btn10Shots)
+        
+        let btn20Shots = SKSpriteNode(imageNamed: "shots20")
+        btn20Shots.name = "add20Shots"
+        btn20Shots.position = CGPointMake(storeNode.size.width*0.33, -(storeNode.size.height*0.25))
+        btn20Shots.setScale(1.4)
+        btn20Shots.zPosition = 7
+        storeNode.addChild(btn20Shots)
+        
         hidden = true
     }
     

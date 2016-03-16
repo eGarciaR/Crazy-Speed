@@ -138,16 +138,31 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     music(false)
                     break
                 case "add5Lifes":
-                    //quitAction()
                     addBoughtLifes(5);
                     break
                 case "add10Lifes":
-                    //quitAction()
                     addBoughtLifes(10);
                     break
                 case "add20Lifes":
-                    //quitAction()
                     addBoughtLifes(20);
+                    break
+                case "add5Shield":
+                    addBoughtShield(5);
+                    break
+                case "add10Shield":
+                    addBoughtShield(10);
+                    break
+                case "add20Shield":
+                    addBoughtShield(20);
+                    break
+                case "add5Shots":
+                    addBoughtShots(5);
+                    break
+                case "add10Shots":
+                    addBoughtShots(10);
+                    break
+                case "add20Shots":
+                    addBoughtShots(20);
                     break
                 default:
                     break
@@ -324,6 +339,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    func addBoughtShield(shieldsAdded: Int) {
+        qShield += shieldsAdded
+        labels?.updateQuantityShield(qShield)
+        saveGameData()
+    }
+    
     func addShotGun() {
         let currentTimeAbsolute = CFAbsoluteTimeGetCurrent()
         
@@ -337,6 +358,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             timeOfLastShotGun = CFAbsoluteTimeGetCurrent()
         }
+    }
+    
+    func addBoughtShots(shotsAdded: Int) {
+        qShotGun += shotsAdded
+        labels?.updateQuantityShotGun(qShotGun)
+        saveGameData()
     }
     
     func updateCarTimeInterval(currentTime: CFTimeInterval){
