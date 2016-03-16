@@ -374,14 +374,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             addCarTimeInterval = 0.25
         } else if (self.totalGameTime > 80) {
             addCarTimeInterval = 0.3
-        } else if ( self.totalGameTime > 60) {
-            addCarTimeInterval = 0.5
+        } else if (self.totalGameTime > 60) {
+            addCarTimeInterval = 0.4
         } else if (self.totalGameTime > 45) {
-            addCarTimeInterval = 0.75
+            addCarTimeInterval = 0.65
         } else if (self.totalGameTime > 30) {
-            addCarTimeInterval = 1.0
+            addCarTimeInterval = 0.9
         } else if (self.totalGameTime > 15) {
-            addCarTimeInterval = 1.25
+            addCarTimeInterval = 1.2
         }
     }
     
