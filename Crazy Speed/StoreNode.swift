@@ -23,13 +23,13 @@ class StoreNode: SKNode {
         let title = SKLabelNode(fontNamed: "Arial")
         title.text = "STORE"
         title.fontSize = CGFloat(viewSize.width / 10.5)
-        title.position = CGPointMake(0, storeNode.size.height*0.35)
+        title.position = CGPointMake(0, storeNode.size.height*0.4)
         title.zPosition = 7
         storeNode.addChild(title)
         
         let btnReturnMenu = SKSpriteNode(imageNamed: "quit")
         btnReturnMenu.name = "quit"
-        btnReturnMenu.position = CGPointMake(0, -(storeNode.size.height*0.4))
+        btnReturnMenu.position = CGPointMake(0, -(storeNode.size.height*0.42))
         btnReturnMenu.setScale(0.75)
         btnReturnMenu.zPosition = 7
         storeNode.addChild(btnReturnMenu)

@@ -18,10 +18,12 @@ class ShieldBoosterNode: SKSpriteNode {
         self.name = "shield"
         self.position = position
         self.zPosition = 4
-        if UIScreen.mainScreen().bounds.width <= 400 {self.setScale(0.60)}
-        else if UIScreen.mainScreen().bounds.width > 400 && UIScreen.mainScreen().bounds.width < 500 {self.setScale(1)}
+        if UIScreen.mainScreen().bounds.width <= 370 {self.setScale(0.7)}
+        else if UIScreen.mainScreen().bounds.width > 370 && UIScreen.mainScreen().bounds.width < 400 {self.setScale(0.8)}
+        else if UIScreen.mainScreen().bounds.width > 400 && UIScreen.mainScreen().bounds.width < 500 {self.setScale(0.9)}
         else if UIScreen.mainScreen().bounds.width > 500 && UIScreen.mainScreen().bounds.width < 760{self.setScale(1)}
         else {self.setScale(1.5)}
+        print(UIScreen.mainScreen().bounds.width)
     }
     
     func updateQuantity(n: Int){

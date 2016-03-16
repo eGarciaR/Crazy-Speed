@@ -43,14 +43,14 @@ class LabelsNode : SKNode {
         quantityShield = SKLabelNode(fontNamed: font)
         quantityShield.fontSize = CGFloat(fontSize)
         quantityShield.fontColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
-        quantityShield.position = CGPointMake(viewSize.width/2+viewSize.width/3+viewSize.width/9, viewSize.height/2-viewSize.height/14)
+        quantityShield.position = CGPointMake(viewSize.width*0.94, viewSize.height/2-viewSize.height/14)
         quantityShield.zPosition = 6
         addChild(quantityShield)
         
         quantityShot = SKLabelNode(fontNamed: font)
         quantityShot.fontSize = CGFloat(fontSize)
         quantityShot.fontColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
-        quantityShot.position = CGPointMake(viewSize.width/16, viewSize.height/2-viewSize.height/14)
+        quantityShot.position = CGPointMake(viewSize.width*0.06, viewSize.height/2-viewSize.height/14)
         quantityShot.zPosition = 6
         addChild(quantityShot)
         

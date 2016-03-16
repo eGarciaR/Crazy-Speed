@@ -18,7 +18,8 @@ class ShotGunBoosterNode: SKSpriteNode {
         self.name = "shots"
         self.position = position
         self.zPosition = 4
-        if UIScreen.mainScreen().bounds.width <= 400 {self.setScale(0.60)}
+        if UIScreen.mainScreen().bounds.width <= 370 {self.setScale(0.7)}
+        else if UIScreen.mainScreen().bounds.width > 370 && UIScreen.mainScreen().bounds.width < 400 {self.setScale(0.8)}
         else if UIScreen.mainScreen().bounds.width > 400 && UIScreen.mainScreen().bounds.width < 500 {self.setScale(0.9)}
         else if UIScreen.mainScreen().bounds.width > 500 && UIScreen.mainScreen().bounds.width < 760{self.setScale(1)}
         else {self.setScale(1.5)}
