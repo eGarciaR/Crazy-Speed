@@ -118,6 +118,71 @@ class StoreNode: SKNode {
         btn20Shots.zPosition = 7
         storeNode.addChild(btn20Shots)
         
+        
+        /*Labels Precios*/
+        let label099 = SKLabelNode(fontNamed: "Arial")
+        label099.text = "0,99€"
+        label099.fontSize = CGFloat(viewSize.width / 18.5)
+        label099.position = CGPointMake(-(storeNode.size.width*0.10), storeNode.size.height*0.33)
+        label099.zPosition = 8
+        storeNode.addChild(label099)
+        
+        let label150 = SKLabelNode(fontNamed: "Arial")
+        label150.text = "1,50€"
+        label150.fontSize = CGFloat(viewSize.width / 18.5)
+        label150.position = CGPointMake(storeNode.size.width*0.10, storeNode.size.height*0.33)
+        label150.zPosition = 7
+        storeNode.addChild(label150)
+        
+        let label250 = SKLabelNode(fontNamed: "Arial")
+        label250.text = "2,50€"
+        label250.fontSize = CGFloat(viewSize.width / 18.5)
+        label250.position = CGPointMake(storeNode.size.width*0.33, storeNode.size.height*0.33)
+        label250.zPosition = 8
+        storeNode.addChild(label250)
+        
+        let label099m = SKLabelNode(fontNamed: "Arial")
+        label099m.text = "0,99€"
+        label099m.fontSize = CGFloat(viewSize.width / 18.5)
+        label099m.position = CGPointMake(-(storeNode.size.width*0.10), storeNode.size.height*0.08)
+        label099m.zPosition = 8
+        storeNode.addChild(label099m)
+        
+        let label150m = SKLabelNode(fontNamed: "Arial")
+        label150m.text = "1,50€"
+        label150m.fontSize = CGFloat(viewSize.width / 18.5)
+        label150m.position = CGPointMake(storeNode.size.width*0.10, storeNode.size.height*0.08)
+        label150m.zPosition = 8
+        storeNode.addChild(label150m)
+        
+        let label250m = SKLabelNode(fontNamed: "Arial")
+        label250m.text = "2,50€"
+        label250m.fontSize = CGFloat(viewSize.width / 18.5)
+        label250m.position = CGPointMake(storeNode.size.width*0.33, storeNode.size.height*0.08)
+        label250m.zPosition = 8
+        storeNode.addChild(label250m)
+        
+        let label099b = SKLabelNode(fontNamed: "Arial")
+        label099b.text = "0,99€"
+        label099b.fontSize = CGFloat(viewSize.width / 18.5)
+        label099b.position = CGPointMake(-(storeNode.size.width*0.10), -(storeNode.size.height*0.17))
+        label099b.zPosition = 8
+        storeNode.addChild(label099b)
+        
+        let label150b = SKLabelNode(fontNamed: "Arial")
+        label150b.text = "1,50€"
+        label150b.fontSize = CGFloat(viewSize.width / 18.5)
+        label150b.position = CGPointMake(storeNode.size.width*0.10, -(storeNode.size.height*0.17))
+        label150b.zPosition = 8
+        storeNode.addChild(label150b)
+        
+        let label250b = SKLabelNode(fontNamed: "Arial")
+        label250b.text = "2,50€"
+        label250b.fontSize = CGFloat(viewSize.width / 18.5)
+        label250b.position = CGPointMake(storeNode.size.width*0.33, -(storeNode.size.height*0.17))
+        label250b.zPosition = 8
+        storeNode.addChild(label250b)
+        
         hidden = true
     }
     
