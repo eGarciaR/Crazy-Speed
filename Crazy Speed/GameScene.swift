@@ -63,9 +63,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func didMoveToView(view: SKView) {
         viewSize = size
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "saveGameData", name: "saveGameData", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "pause", name: "pause", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "resume", name: "resume", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(GameScene.saveGameData), name: "saveGameData", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(GameScene.pause), name: "pause", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(GameScene.resume), name: "resume", object: nil)
         
         self.physicsWorld.gravity = CGVectorMake(0.0, 0.0) // Gravedad zero
         self.physicsWorld.contactDelegate = self
@@ -464,7 +464,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         car!.activateShield()
         shieldUp = true
         boosterTime = 0
-        timerShield = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("countdown"), userInfo: nil, repeats: true)
+        timerShield = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(GameScene.countdown), userInfo: nil, repeats: true)
         qShield -= 1
         labels!.updateQuantityShield(qShield)
     }
@@ -473,7 +473,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         shotGunUp = true
         boosterTime = 0
         createShotGunNode()
-        timerShotGun = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("countdown"), userInfo: nil, repeats: true)
+        timerShotGun = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: #selector(GameScene.countdown), userInfo: nil, repeats: true)
         qShotGun -= 1
         labels!.updateQuantityShotGun(qShotGun)
     }
@@ -611,7 +611,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.paused = false
         if shotGunUp {
             timerShotGun.invalidate() // Invalidamos el tiempo para parar todos los timers, para ser más precisos habría que crear una varible en el pause() que almacene el valor del tiempo para después volver a continuar desde el mismo tiempo.
-            timerShotGun = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("countdown"), userInfo: nil, repeats: true)
+            timerShotGun = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: #selector(GameScene.countdown), userInfo: nil, repeats: true)
         } // Si el juego se reanuda, hay que reinicializar el timer
         pauseMenu?.hide()
         audioPlayer.volume = 1.0

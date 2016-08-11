@@ -78,6 +78,9 @@
 		2BB534A51BB1BB0400374E2A /* GameStartNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB534A41BB1BB0400374E2A /* GameStartNode.swift */; };
 		2BB534A71BB1BB1B00374E2A /* GameOverNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB534A61BB1BB1B00374E2A /* GameOverNode.swift */; };
 		2BCFABC21BB2F22E00B28D37 /* OtherCarNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCFABC11BB2F22E00B28D37 /* OtherCarNode.swift */; };
+		2BFABC2F1D5CDCEE00F5F48C /* taxi.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BFABC2E1D5CDCEE00F5F48C /* taxi.png */; };
+		2BFABC311D5CDE9A00F5F48C /* formula1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BFABC301D5CDE9A00F5F48C /* formula1.png */; };
+		2BFABC331D5CE1B200F5F48C /* redPickup.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BFABC321D5CE1B200F5F48C /* redPickup.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -154,6 +157,9 @@
 		2BB534A41BB1BB0400374E2A /* GameStartNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameStartNode.swift; sourceTree = "<group>"; };
 		2BB534A61BB1BB1B00374E2A /* GameOverNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverNode.swift; sourceTree = "<group>"; };
 		2BCFABC11BB2F22E00B28D37 /* OtherCarNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherCarNode.swift; sourceTree = "<group>"; };
+		2BFABC2E1D5CDCEE00F5F48C /* taxi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taxi.png; sourceTree = "<group>"; };
+		2BFABC301D5CDE9A00F5F48C /* formula1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = formula1.png; sourceTree = "<group>"; };
+		2BFABC321D5CE1B200F5F48C /* redPickup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redPickup.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +220,7 @@
 				276EBB501C878D14008C96F8 /* bullet_black.png */,
 				276EBB541C87A85A008C96F8 /* bullet.png */,
 				2B9E18521B90C33300F7F9D3 /* car.png */,
+				2BFABC301D5CDE9A00F5F48C /* formula1.png */,
 				2B760B471D5C90EF008439D5 /* furgoneta.png */,
 				27C62B0F1C9820CA009DEB58 /* heart5Lifes.png */,
 				27C62B111C982126009DEB58 /* heart10Lifes.png */,
@@ -234,10 +241,10 @@
 				2B760B451D5C900F008439D5 /* orangeSedan.png */,
 				27321EDD1C8B026F003D2A6F /* pause.png */,
 				2B760B491D5C91F6008439D5 /* pickup.png */,
-				2B760B411D5C8D10008439D5 /* police.png */,
 				2B44CAF11BAC56D700751768 /* play.png */,
-				2B760B351D5C776A008439D5 /* viper.png */,
+				2B760B411D5C8D10008439D5 /* police.png */,
 				27321EDF1C8B0391003D2A6F /* quit.png */,
+				2BFABC321D5CE1B200F5F48C /* redPickup.png */,
 				2B760B431D5C8E94008439D5 /* semiTruck.png */,
 				27345FBD1C8C33B9002413A0 /* settings.png */,
 				273E292A1C905162006AF774 /* shield.png */,
@@ -250,6 +257,8 @@
 				273FC4C41C9960B500E45E3B /* shots10.png */,
 				273FC4C51C9960B500E45E3B /* shots20.png */,
 				2726A8E01B98FE3D00C4D522 /* spark.png */,
+				2BFABC2E1D5CDCEE00F5F48C /* taxi.png */,
+				2B760B351D5C776A008439D5 /* viper.png */,
 			);
 			name = Res;
 			sourceTree = "<group>";
@@ -360,12 +369,14 @@
 				2B760B4A1D5C91F6008439D5 /* pickup.png in Resources */,
 				2746446E1C88CE2200F2FE61 /* music8bits.mp3 in Resources */,
 				2726A8E11B98FE3D00C4D522 /* CarExplosion.sks in Resources */,
+				2BFABC331D5CE1B200F5F48C /* redPickup.png in Resources */,
 				273FC4C61C9960B500E45E3B /* shots5.png in Resources */,
 				2B44CAF71BAC56E400751768 /* bolt.png in Resources */,
 				2B760B461D5C900F008439D5 /* orangeSedan.png in Resources */,
 				2B9E18531B90C33300F7F9D3 /* car.png in Resources */,
 				276EBB551C87A85A008C96F8 /* bullet.png in Resources */,
 				27345FBE1C8C33B9002413A0 /* settings.png in Resources */,
+				2BFABC2F1D5CDCEE00F5F48C /* taxi.png in Resources */,
 				2726A8E21B98FE3D00C4D522 /* spark.png in Resources */,
 				2B760B361D5C776A008439D5 /* viper.png in Resources */,
 				2B44CAF21BAC56D700751768 /* play.png in Resources */,
@@ -381,6 +392,7 @@
 				27C62B141C98212B009DEB58 /* heart20Lifes.png in Resources */,
 				2B760B381D5C7E87008439D5 /* audiR8.png in Resources */,
 				2B5F2D831BA2DDD800F436C1 /* launch4@2x.png in Resources */,
+				2BFABC311D5CDE9A00F5F48C /* formula1.png in Resources */,
 				2B5F2D841BA2DDD800F436C1 /* launch5@2x.png in Resources */,
 				2B44CAF81BAC56E400751768 /* shop.png in Resources */,
 				273FC4C71C9960B500E45E3B /* shots10.png in Resources */,
@@ -544,11 +556,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Crazy Speed/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fergargames.crazyspeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -558,11 +572,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Crazy Speed/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fergargames.crazyspeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

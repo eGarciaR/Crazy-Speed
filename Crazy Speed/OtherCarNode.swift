@@ -4,7 +4,7 @@ class OtherCarNode: SKSpriteNode {
     
     var carPosition = 0
     
-    let image = Util.random(0, max: 7)
+    let image = Util.random(0, max: 9)
     
     init(mySide: Bool) {
         
