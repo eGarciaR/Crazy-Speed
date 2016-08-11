@@ -457,7 +457,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         shieldUp = true
         boosterTime = 0
         timerShield = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("countdown"), userInfo: nil, repeats: true)
-        --qShield
+        qShield -= 1
         labels!.updateQuantityShield(qShield)
     }
     
@@ -466,7 +466,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         boosterTime = 0
         createShotGunNode()
         timerShotGun = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("countdown"), userInfo: nil, repeats: true)
-        --qShotGun
+        qShotGun -= 1
         labels!.updateQuantityShotGun(qShotGun)
     }
     
@@ -496,7 +496,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func countdown() {
-        if !paused {boosterTime++}
+        if !paused {boosterTime += 1}
         if shieldUp {
             if boosterTime == 12 {
                 labels?.showCountdownNumbers()
@@ -614,7 +614,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         turnOffShotGun()
         
-        lifes--
+        lifes -= 1
         labels?.updateLifes(lifes)
         
         highscore = ((score+minSpeed) > highscore ) ? (score+minSpeed) : highscore

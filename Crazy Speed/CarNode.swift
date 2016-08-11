@@ -49,7 +49,7 @@ class CarNode: SKSpriteNode {
     
     private func moveLeft() {
         if carPosition > 0 {
-            --carPosition
+            carPosition -= 1
             let moveAction = SKAction.moveToX(totalAvailablePositions[carPosition], duration: 0.3)
             self.runAction(moveAction)
         }
@@ -57,7 +57,7 @@ class CarNode: SKSpriteNode {
     
     private func moveRight() {
         if carPosition < 4 {
-            ++carPosition
+            carPosition += 1
             let moveAction = SKAction.moveToX(totalAvailablePositions[carPosition], duration: 0.3)
             self.runAction(moveAction)
         }
