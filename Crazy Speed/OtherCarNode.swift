@@ -4,8 +4,11 @@ class OtherCarNode: SKSpriteNode {
     
     var carPosition = 0
     
+    let image = Util.random(0, max: 7)
+    
     init(mySide: Bool) {
-        let texture = SKTexture(imageNamed: imageVector[Util.random(0, max: 5)])
+        
+        let texture = SKTexture(imageNamed: imageVector[image])
         super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
         
         if (mySide) {
@@ -17,7 +20,13 @@ class OtherCarNode: SKSpriteNode {
             self.zRotation = CGFloat(M_PI)
         }
         
-        self.name = "otherCar"
+        if image == 6 {
+            self.name = "ambulance"
+        }
+        else {
+            self.name = "otherCar"
+        }
+        
         if UIScreen.mainScreen().bounds.width <= 420 {self.setScale(0.35)}
         else {self.setScale(0.5)}
         self.position = CGPointMake(totalAvailablePositions[carPosition], viewSize.height + (texture.size().height/2))

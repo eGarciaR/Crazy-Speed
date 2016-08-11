@@ -6,8 +6,20 @@ class CarNode: SKSpriteNode {
     var speedCar = 10
     
     init(position: CGPoint) {
-        let texture = SKTexture(imageNamed: "car")
-        super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
+        let image = arc4random_uniform(3) // 0, 1 or 2
+        let viper = SKTexture(imageNamed: "viper")
+        let audiR8 = SKTexture(imageNamed: "audiR8")
+        let camaro = SKTexture(imageNamed: "car")
+        if image == 0 {
+            super.init(texture: viper, color: UIColor.clearColor(), size: viper.size())
+        }
+        else if image == 1 {
+            super.init(texture: audiR8, color: UIColor.clearColor(), size: audiR8.size())
+        }
+        else {
+            super.init(texture: camaro, color: UIColor.clearColor(), size: camaro.size())
+        }
+        //super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
         
         self.name = "Car"
         self.position = position

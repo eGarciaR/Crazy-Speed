@@ -41,10 +41,6 @@
 		2B44CAF71BAC56E400751768 /* bolt.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B44CAF41BAC56E400751768 /* bolt.png */; };
 		2B44CAF81BAC56E400751768 /* shop.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B44CAF51BAC56E400751768 /* shop.png */; };
 		2B5541C21B949B510078DA09 /* beetle.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B5541C11B949B510078DA09 /* beetle.png */; };
-		2B5541C71B949B5A0078DA09 /* pickup.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B5541C31B949B5A0078DA09 /* pickup.png */; };
-		2B5541C81B949B5A0078DA09 /* police.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B5541C41B949B5A0078DA09 /* police.png */; };
-		2B5541C91B949B5A0078DA09 /* sedan.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B5541C51B949B5A0078DA09 /* sedan.png */; };
-		2B5541CA1B949B5A0078DA09 /* truck.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B5541C61B949B5A0078DA09 /* truck.png */; };
 		2B5541D01B94B96A0078DA09 /* bg1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B5541CF1B94B96A0078DA09 /* bg1.png */; };
 		2B5F2D7B1BA2DDC900F436C1 /* icon_app_store.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B5F2D781BA2DDC900F436C1 /* icon_app_store.png */; };
 		2B5F2D7C1BA2DDC900F436C1 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B5F2D791BA2DDC900F436C1 /* icon@2x.png */; };
@@ -53,6 +49,14 @@
 		2B5F2D831BA2DDD800F436C1 /* launch4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B5F2D7F1BA2DDD800F436C1 /* launch4@2x.png */; };
 		2B5F2D841BA2DDD800F436C1 /* launch5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B5F2D801BA2DDD800F436C1 /* launch5@2x.png */; };
 		2B5F2D851BA2DDD800F436C1 /* main.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B5F2D811BA2DDD800F436C1 /* main.png */; };
+		2B760B361D5C776A008439D5 /* viper.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B760B351D5C776A008439D5 /* viper.png */; };
+		2B760B381D5C7E87008439D5 /* audiR8.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B760B371D5C7E87008439D5 /* audiR8.png */; };
+		2B760B3D1D5C8344008439D5 /* ambulancia.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B760B391D5C8344008439D5 /* ambulancia.png */; };
+		2B760B421D5C8D10008439D5 /* police.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B760B411D5C8D10008439D5 /* police.png */; };
+		2B760B441D5C8E94008439D5 /* semiTruck.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B760B431D5C8E94008439D5 /* semiTruck.png */; };
+		2B760B461D5C900F008439D5 /* orangeSedan.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B760B451D5C900F008439D5 /* orangeSedan.png */; };
+		2B760B481D5C90EF008439D5 /* furgoneta.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B760B471D5C90EF008439D5 /* furgoneta.png */; };
+		2B760B4A1D5C91F6008439D5 /* pickup.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B760B491D5C91F6008439D5 /* pickup.png */; };
 		2B7989571BB005D700E3219A /* BackgroundNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7989561BB005D700E3219A /* BackgroundNode.swift */; };
 		2B7989591BB015F600E3219A /* LabelsNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7989581BB015F600E3219A /* LabelsNode.swift */; };
 		2B79895B1BB0392500E3219A /* ButtonShopNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B79895A1BB0392500E3219A /* ButtonShopNode.swift */; };
@@ -111,10 +115,6 @@
 		2B44CAF41BAC56E400751768 /* bolt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bolt.png; sourceTree = "<group>"; };
 		2B44CAF51BAC56E400751768 /* shop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shop.png; sourceTree = "<group>"; };
 		2B5541C11B949B510078DA09 /* beetle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beetle.png; sourceTree = "<group>"; };
-		2B5541C31B949B5A0078DA09 /* pickup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pickup.png; sourceTree = "<group>"; };
-		2B5541C41B949B5A0078DA09 /* police.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = police.png; sourceTree = "<group>"; };
-		2B5541C51B949B5A0078DA09 /* sedan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sedan.png; sourceTree = "<group>"; };
-		2B5541C61B949B5A0078DA09 /* truck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = truck.png; sourceTree = "<group>"; };
 		2B5541CF1B94B96A0078DA09 /* bg1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg1.png; sourceTree = "<group>"; };
 		2B5F2D781BA2DDC900F436C1 /* icon_app_store.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_app_store.png; sourceTree = "<group>"; };
 		2B5F2D791BA2DDC900F436C1 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
@@ -123,6 +123,14 @@
 		2B5F2D7F1BA2DDD800F436C1 /* launch4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch4@2x.png"; sourceTree = "<group>"; };
 		2B5F2D801BA2DDD800F436C1 /* launch5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch5@2x.png"; sourceTree = "<group>"; };
 		2B5F2D811BA2DDD800F436C1 /* main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main.png; sourceTree = "<group>"; };
+		2B760B351D5C776A008439D5 /* viper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = viper.png; sourceTree = "<group>"; };
+		2B760B371D5C7E87008439D5 /* audiR8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = audiR8.png; sourceTree = "<group>"; };
+		2B760B391D5C8344008439D5 /* ambulancia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ambulancia.png; sourceTree = "<group>"; };
+		2B760B411D5C8D10008439D5 /* police.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = police.png; sourceTree = "<group>"; };
+		2B760B431D5C8E94008439D5 /* semiTruck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = semiTruck.png; sourceTree = "<group>"; };
+		2B760B451D5C900F008439D5 /* orangeSedan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orangeSedan.png; sourceTree = "<group>"; };
+		2B760B471D5C90EF008439D5 /* furgoneta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = furgoneta.png; sourceTree = "<group>"; };
+		2B760B491D5C91F6008439D5 /* pickup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pickup.png; sourceTree = "<group>"; };
 		2B7989561BB005D700E3219A /* BackgroundNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundNode.swift; sourceTree = "<group>"; };
 		2B7989581BB015F600E3219A /* LabelsNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelsNode.swift; sourceTree = "<group>"; };
 		2B79895A1BB0392500E3219A /* ButtonShopNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonShopNode.swift; sourceTree = "<group>"; };
@@ -196,48 +204,52 @@
 		2B9E184D1B909AC300F7F9D3 /* Res */ = {
 			isa = PBXGroup;
 			children = (
+				2B760B391D5C8344008439D5 /* ambulancia.png */,
+				2B760B371D5C7E87008439D5 /* audiR8.png */,
+				273E29261C904DBD006AF774 /* background.png */,
+				2B5541C11B949B510078DA09 /* beetle.png */,
+				2B9E18501B90B33800F7F9D3 /* bg.png */,
+				2B5541CF1B94B96A0078DA09 /* bg1.png */,
+				2B44CAF41BAC56E400751768 /* bolt.png */,
+				276EBB501C878D14008C96F8 /* bullet_black.png */,
+				276EBB541C87A85A008C96F8 /* bullet.png */,
+				2B9E18521B90C33300F7F9D3 /* car.png */,
+				2B760B471D5C90EF008439D5 /* furgoneta.png */,
+				27C62B0F1C9820CA009DEB58 /* heart5Lifes.png */,
+				27C62B111C982126009DEB58 /* heart10Lifes.png */,
+				27C62B131C98212B009DEB58 /* heart20Lifes.png */,
+				2BB534981BB1938E00374E2A /* hud.png */,
+				2B5F2D781BA2DDC900F436C1 /* icon_app_store.png */,
+				2B5F2D791BA2DDC900F436C1 /* icon@2x.png */,
+				2B5F2D7A1BA2DDC900F436C1 /* icon@3x.png */,
+				2B5F2D7E1BA2DDD800F436C1 /* launch.png */,
+				2B5F2D7F1BA2DDD800F436C1 /* launch4@2x.png */,
+				2B5F2D801BA2DDD800F436C1 /* launch5@2x.png */,
+				2BB5349A1BB1939700374E2A /* layer.png */,
+				2B44CAF31BAC56E400751768 /* load.png */,
+				2B5F2D811BA2DDD800F436C1 /* main.png */,
+				2746446D1C88CE2200F2FE61 /* music8bits.mp3 */,
+				273909AC1C8EDE2400611662 /* mute.png */,
+				273909AB1C8EDE2400611662 /* noMute.png */,
+				2B760B451D5C900F008439D5 /* orangeSedan.png */,
+				27321EDD1C8B026F003D2A6F /* pause.png */,
+				2B760B491D5C91F6008439D5 /* pickup.png */,
+				2B760B411D5C8D10008439D5 /* police.png */,
+				2B44CAF11BAC56D700751768 /* play.png */,
+				2B760B351D5C776A008439D5 /* viper.png */,
+				27321EDF1C8B0391003D2A6F /* quit.png */,
+				2B760B431D5C8E94008439D5 /* semiTruck.png */,
 				27345FBD1C8C33B9002413A0 /* settings.png */,
 				273E292A1C905162006AF774 /* shield.png */,
-				27C62B131C98212B009DEB58 /* heart20Lifes.png */,
-				27C62B111C982126009DEB58 /* heart10Lifes.png */,
-				27C62B0F1C9820CA009DEB58 /* heart5Lifes.png */,
 				273FC4BD1C99601400E45E3B /* shield5.png */,
 				273FC4BE1C99601400E45E3B /* shield10.png */,
 				273FC4BF1C99601400E45E3B /* shield20.png */,
+				2B44CAF51BAC56E400751768 /* shop.png */,
+				273E29281C904F0E006AF774 /* shots.png */,
 				273FC4C31C9960B500E45E3B /* shots5.png */,
 				273FC4C41C9960B500E45E3B /* shots10.png */,
 				273FC4C51C9960B500E45E3B /* shots20.png */,
 				2726A8E01B98FE3D00C4D522 /* spark.png */,
-				273909AB1C8EDE2400611662 /* noMute.png */,
-				273909AC1C8EDE2400611662 /* mute.png */,
-				2BB5349A1BB1939700374E2A /* layer.png */,
-				2746446D1C88CE2200F2FE61 /* music8bits.mp3 */,
-				2BB534981BB1938E00374E2A /* hud.png */,
-				27321EDD1C8B026F003D2A6F /* pause.png */,
-				27321EDF1C8B0391003D2A6F /* quit.png */,
-				2B44CAF31BAC56E400751768 /* load.png */,
-				2B44CAF41BAC56E400751768 /* bolt.png */,
-				273E29261C904DBD006AF774 /* background.png */,
-				276EBB541C87A85A008C96F8 /* bullet.png */,
-				273E29281C904F0E006AF774 /* shots.png */,
-				2B44CAF51BAC56E400751768 /* shop.png */,
-				2B44CAF11BAC56D700751768 /* play.png */,
-				2B5F2D7E1BA2DDD800F436C1 /* launch.png */,
-				2B5F2D7F1BA2DDD800F436C1 /* launch4@2x.png */,
-				2B5F2D801BA2DDD800F436C1 /* launch5@2x.png */,
-				2B5F2D811BA2DDD800F436C1 /* main.png */,
-				2B5F2D781BA2DDC900F436C1 /* icon_app_store.png */,
-				2B5F2D791BA2DDC900F436C1 /* icon@2x.png */,
-				2B5F2D7A1BA2DDC900F436C1 /* icon@3x.png */,
-				2B9E18501B90B33800F7F9D3 /* bg.png */,
-				276EBB501C878D14008C96F8 /* bullet_black.png */,
-				2B5541CF1B94B96A0078DA09 /* bg1.png */,
-				2B9E18521B90C33300F7F9D3 /* car.png */,
-				2B5541C31B949B5A0078DA09 /* pickup.png */,
-				2B5541C41B949B5A0078DA09 /* police.png */,
-				2B5541C51B949B5A0078DA09 /* sedan.png */,
-				2B5541C61B949B5A0078DA09 /* truck.png */,
-				2B5541C11B949B510078DA09 /* beetle.png */,
 			);
 			name = Res;
 			sourceTree = "<group>";
@@ -345,15 +357,17 @@
 				2B5F2D7C1BA2DDC900F436C1 /* icon@2x.png in Resources */,
 				27321EE01C8B0391003D2A6F /* quit.png in Resources */,
 				2B5F2D7D1BA2DDC900F436C1 /* icon@3x.png in Resources */,
+				2B760B4A1D5C91F6008439D5 /* pickup.png in Resources */,
 				2746446E1C88CE2200F2FE61 /* music8bits.mp3 in Resources */,
 				2726A8E11B98FE3D00C4D522 /* CarExplosion.sks in Resources */,
 				273FC4C61C9960B500E45E3B /* shots5.png in Resources */,
 				2B44CAF71BAC56E400751768 /* bolt.png in Resources */,
+				2B760B461D5C900F008439D5 /* orangeSedan.png in Resources */,
 				2B9E18531B90C33300F7F9D3 /* car.png in Resources */,
 				276EBB551C87A85A008C96F8 /* bullet.png in Resources */,
 				27345FBE1C8C33B9002413A0 /* settings.png in Resources */,
 				2726A8E21B98FE3D00C4D522 /* spark.png in Resources */,
-				2B5541C81B949B5A0078DA09 /* police.png in Resources */,
+				2B760B361D5C776A008439D5 /* viper.png in Resources */,
 				2B44CAF21BAC56D700751768 /* play.png in Resources */,
 				273FC4C81C9960B500E45E3B /* shots20.png in Resources */,
 				2B5F2D851BA2DDD800F436C1 /* main.png in Resources */,
@@ -365,26 +379,28 @@
 				27321EDE1C8B026F003D2A6F /* pause.png in Resources */,
 				273909AE1C8EDE2400611662 /* mute.png in Resources */,
 				27C62B141C98212B009DEB58 /* heart20Lifes.png in Resources */,
+				2B760B381D5C7E87008439D5 /* audiR8.png in Resources */,
 				2B5F2D831BA2DDD800F436C1 /* launch4@2x.png in Resources */,
 				2B5F2D841BA2DDD800F436C1 /* launch5@2x.png in Resources */,
-				2B5541CA1B949B5A0078DA09 /* truck.png in Resources */,
-				2B5541C91B949B5A0078DA09 /* sedan.png in Resources */,
 				2B44CAF81BAC56E400751768 /* shop.png in Resources */,
 				273FC4C71C9960B500E45E3B /* shots10.png in Resources */,
 				2B5F2D821BA2DDD800F436C1 /* launch.png in Resources */,
 				2B9E18411B909A0A00F7F9D3 /* Assets.xcassets in Resources */,
 				273909AD1C8EDE2400611662 /* noMute.png in Resources */,
 				273E29291C904F0E006AF774 /* shots.png in Resources */,
-				2B5541C71B949B5A0078DA09 /* pickup.png in Resources */,
 				273E292B1C905162006AF774 /* shield.png in Resources */,
+				2B760B481D5C90EF008439D5 /* furgoneta.png in Resources */,
+				2B760B3D1D5C8344008439D5 /* ambulancia.png in Resources */,
 				27C62B121C982126009DEB58 /* heart10Lifes.png in Resources */,
 				2B5541C21B949B510078DA09 /* beetle.png in Resources */,
 				273FC4C01C99601400E45E3B /* shield5.png in Resources */,
 				276EBB511C878D14008C96F8 /* bullet_black.png in Resources */,
+				2B760B441D5C8E94008439D5 /* semiTruck.png in Resources */,
 				2B9E183F1B909A0A00F7F9D3 /* Main.storyboard in Resources */,
 				2B44CAF61BAC56E400751768 /* load.png in Resources */,
 				2BB534991BB1938E00374E2A /* hud.png in Resources */,
 				2B5F2D7B1BA2DDC900F436C1 /* icon_app_store.png in Resources */,
+				2B760B421D5C8D10008439D5 /* police.png in Resources */,
 				2BB5349B1BB1939700374E2A /* layer.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

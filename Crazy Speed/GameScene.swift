@@ -181,6 +181,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addLife()
         addShield() // booster
         addShotGun() // booster
+        
         if isStarted && (!didTheGamePaused){
             background?.move()
             addCar(currentTime)
@@ -195,6 +196,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 boosterTime = 0
                 turnOffShotGun()
             }
+            
         }
         
         if !self.paused {didTheGamePaused = false}
@@ -204,6 +206,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func didSimulatePhysics() {
         self.enumerateChildNodesWithName("otherCar", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
+            if node.position.y + node.frame.size.height < 0 {
+                node.removeFromParent()
+            }
+            
+        })
+        self.enumerateChildNodesWithName("ambulance", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
             if node.position.y + node.frame.size.height < 0 {
                 node.removeFromParent()
             }
@@ -625,6 +633,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.enumerateChildNodesWithName("otherCar", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
             node.removeFromParent()
         })
+        self.enumerateChildNodesWithName("ambulance", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
+            node.removeFromParent()
+        })
         self.enumerateChildNodesWithName("bullet", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
             node.removeFromParent()
         })
@@ -640,6 +651,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         saveGameData()
         
         self.enumerateChildNodesWithName("otherCar", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
+            node.removeFromParent()
+        })
+        self.enumerateChildNodesWithName("ambulance", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
             node.removeFromParent()
         })
         self.enumerateChildNodesWithName("bullet", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
