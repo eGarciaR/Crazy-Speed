@@ -5,25 +5,24 @@ class CarNode: SKSpriteNode {
     var carPosition = 2
     var speedCar = 10
     
-    init(position: CGPoint) {
-        let image = arc4random_uniform(4) // 0, 1 or 2
+    init(position: CGPoint, image: Int) {
         let viper = SKTexture(imageNamed: "viper")
         let audiR8 = SKTexture(imageNamed: "audiR8")
         let camaro = SKTexture(imageNamed: "car")
         let formula1 = SKTexture(imageNamed: "formula1")
-        super.init(texture: audiR8, color: UIColor.clearColor(), size: audiR8.size())
-        /*if userCar == 0 {
+        //super.init(texture: audiR8, color: UIColor.clearColor(), size: audiR8.size())
+        if image == 0 {
             super.init(texture: camaro, color: UIColor.clearColor(), size: camaro.size())
         }
-        else if userCar == 1 {
+        else if image == 1 {
             super.init(texture: formula1, color: UIColor.clearColor(), size: formula1.size())
         }
-        else if userCar == 2 {
+        else if image == 2 {
             super.init(texture: viper, color: UIColor.clearColor(), size: viper.size())
         }
         else {
             super.init(texture: audiR8, color: UIColor.clearColor(), size: audiR8.size())
-        }*/
+        }
         
         self.name = "Car"
         self.position = position

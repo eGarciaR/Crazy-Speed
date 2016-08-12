@@ -429,9 +429,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func setupCar() {
-        car = CarNode(position: CGPointMake(self.size.width/2, self.size.height/6))
+        car = CarNode(position: CGPointMake(self.size.width/2, self.size.height/6), image: userCar)
         car?.loadPhysicsBody()
-        car?.texture = SKTexture(imageNamed: carVector[userCar])
         self.addChild(car!)
     }
     
@@ -585,7 +584,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func setupUserCar(name: Int) {
         car?.texture = SKTexture(imageNamed: carVector[name])
+        userCar = name
         saveGameData()
+        carSelectionNode!.hide()
+        inCarSelection = false
+        inSettings = false
+        self.gameStart?.show()
     }
     
     func music(value: Bool) {
