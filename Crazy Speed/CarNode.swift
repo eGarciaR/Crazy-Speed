@@ -11,18 +11,19 @@ class CarNode: SKSpriteNode {
         let audiR8 = SKTexture(imageNamed: "audiR8")
         let camaro = SKTexture(imageNamed: "car")
         let formula1 = SKTexture(imageNamed: "formula1")
-        if image == 0 {
-            super.init(texture: viper, color: UIColor.clearColor(), size: viper.size())
-        }
-        else if image == 1 {
-            super.init(texture: audiR8, color: UIColor.clearColor(), size: audiR8.size())
-        }
-        else if image == 2 {
-            super.init(texture: formula1, color: UIColor.clearColor(), size: formula1.size())
-        }
-        else {
+        super.init(texture: audiR8, color: UIColor.clearColor(), size: audiR8.size())
+        /*if userCar == 0 {
             super.init(texture: camaro, color: UIColor.clearColor(), size: camaro.size())
         }
+        else if userCar == 1 {
+            super.init(texture: formula1, color: UIColor.clearColor(), size: formula1.size())
+        }
+        else if userCar == 2 {
+            super.init(texture: viper, color: UIColor.clearColor(), size: viper.size())
+        }
+        else {
+            super.init(texture: audiR8, color: UIColor.clearColor(), size: audiR8.size())
+        }*/
         
         self.name = "Car"
         self.position = position

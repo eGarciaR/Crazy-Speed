@@ -55,6 +55,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var shieldUp = false
     var shotGunUp = false
     var music = true
+    var userCar = 0
     var boosterTime = 0
     var timerShield = NSTimer()
     var timerShotGun = NSTimer()
@@ -167,6 +168,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     break
                 case "add20Shots":
                     addBoughtShots(20);
+                    break
+                case "viper":
+                    setupUserCar(2)
+                    break
+                case "audiR8":
+                    setupUserCar(3)
+                    break
+                case "camaro":
+                    setupUserCar(0)
+                    break
+                case "formula1":
+                    setupUserCar(1)
                     break
                 default:
                     break
@@ -418,6 +431,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func setupCar() {
         car = CarNode(position: CGPointMake(self.size.width/2, self.size.height/6))
         car?.loadPhysicsBody()
+        car?.texture = SKTexture(imageNamed: carVector[userCar])
         self.addChild(car!)
     }
     
@@ -569,6 +583,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         explosion.runAction(removeExplosion)
     }
     
+    func setupUserCar(name: Int) {
+        car?.texture = SKTexture(imageNamed: carVector[name])
+        saveGameData()
+    }
+    
     func music(value: Bool) {
         if value {
             audioPlayer.play()
@@ -679,6 +698,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         userDefaults.setObject(timeOfLastLife, forKey: "timeOfLastLife")
         userDefaults.setObject(timeOfLastShield, forKey: "timeOfLastShield")
         userDefaults.setObject(timeOfLastShotGun, forKey: "timeOfLastShotGun")
+        userDefaults.setObject(userCar, forKey: "userCar")
         userDefaults.synchronize()
     }
     
@@ -687,6 +707,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         qShield = userDefaults.integerForKey("shields")
         qShotGun = userDefaults.integerForKey("shots")
         music = userDefaults.boolForKey("music")
+        userCar = userDefaults.integerForKey("userCar")
         highscore = userDefaults.integerForKey("highscore")
         timeOfLastLife = userDefaults.objectForKey("timeOfLastLife") as? CFAbsoluteTime
         timeOfLastShield = userDefaults.objectForKey("timeOfLastShield") as? CFAbsoluteTime
@@ -701,6 +722,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             qShield = 5
             qShotGun = 5
             music = true
+            userCar = 0
             saveGameData()
         }
     }

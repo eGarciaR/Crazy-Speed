@@ -7,6 +7,7 @@ let kCCOurCarCategory : UInt32 = 0x1 << 1
 let kCCBulletCategory : UInt32 = 0x1 << 2
 
 let imageVector = ["pickup", "police", "orangeSedan", "semiTruck", "beetle", "ambulancia", "furgoneta", "taxi", "redPickup"]
+let carVector = ["car", "formula1", "viper", "audiR8"]
 let font = "Damascus"
 
 var viewSize: CGSize!
