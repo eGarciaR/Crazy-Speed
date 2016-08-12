@@ -40,6 +40,7 @@
 		2B44CAF61BAC56E400751768 /* load.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B44CAF31BAC56E400751768 /* load.png */; };
 		2B44CAF71BAC56E400751768 /* bolt.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B44CAF41BAC56E400751768 /* bolt.png */; };
 		2B44CAF81BAC56E400751768 /* shop.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B44CAF51BAC56E400751768 /* shop.png */; };
+		2B4900001D5DD02D00BBFDF5 /* CarSelectionNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B49FFFF1D5DD02D00BBFDF5 /* CarSelectionNode.swift */; };
 		2B49FFFC1D5DB9B500BBFDF5 /* carSelection.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B49FFFB1D5DB9B500BBFDF5 /* carSelection.png */; };
 		2B5541C21B949B510078DA09 /* beetle.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B5541C11B949B510078DA09 /* beetle.png */; };
 		2B5541D01B94B96A0078DA09 /* bg1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B5541CF1B94B96A0078DA09 /* bg1.png */; };
@@ -118,6 +119,7 @@
 		2B44CAF41BAC56E400751768 /* bolt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bolt.png; sourceTree = "<group>"; };
 		2B44CAF51BAC56E400751768 /* shop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shop.png; sourceTree = "<group>"; };
 		2B49FFFB1D5DB9B500BBFDF5 /* carSelection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carSelection.png; sourceTree = "<group>"; };
+		2B49FFFF1D5DD02D00BBFDF5 /* CarSelectionNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarSelectionNode.swift; sourceTree = "<group>"; };
 		2B5541C11B949B510078DA09 /* beetle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beetle.png; sourceTree = "<group>"; };
 		2B5541CF1B94B96A0078DA09 /* bg1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg1.png; sourceTree = "<group>"; };
 		2B5F2D781BA2DDC900F436C1 /* icon_app_store.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_app_store.png; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 				27321EDB1C8AFDB4003D2A6F /* ShotGunBoosterNode.swift */,
 				273909A91C8EDA6400611662 /* SettingsNode.swift */,
 				27318A7A1C90E02400676F98 /* StoreNode.swift */,
+				2B49FFFF1D5DD02D00BBFDF5 /* CarSelectionNode.swift */,
 			);
 			name = Node;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				2BB534A71BB1BB1B00374E2A /* GameOverNode.swift in Sources */,
 				2BB534971BB1472600374E2A /* Util.swift in Sources */,
 				27318A7B1C90E02400676F98 /* StoreNode.swift in Sources */,
+				2B4900001D5DD02D00BBFDF5 /* CarSelectionNode.swift in Sources */,
 				2BCFABC21BB2F22E00B28D37 /* OtherCarNode.swift in Sources */,
 				27321EDA1C8AF8B7003D2A6F /* ShieldBoosterNode.swift in Sources */,
 				2B9E183C1B909A0A00F7F9D3 /* GameViewController.swift in Sources */,

@@ -60,7 +60,6 @@ class SettingsNode: SKNode {
         btnCarSelect.zPosition = 7
         settingsNode.addChild(btnCarSelect)
         
-        
         hidden = true
     }
     

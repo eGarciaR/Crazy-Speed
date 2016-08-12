@@ -38,6 +38,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var shotGunNode : ShotGunBoosterNode?
     var settingsNode : SettingsNode?
     var storeNode : StoreNode?
+    var carSelectionNode : CarSelectionNode?
     
     var highscore = 0 // mejor puntuacion
     var score = 0 // Distancia recorrida en metros
@@ -47,6 +48,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var didTheGamePaused = false
     var boosterTouched = false
     var inSettings = false
+    var inCarSelection = false
     var inStore = false
     var destroyed = false
     
@@ -82,6 +84,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         setupGameOver()
         setupBoosters()
         setupSettings()
+        setupCarSelection()
         setupStore()
         setupSounds()
         setupTransparentPauseNode()
@@ -134,6 +137,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     break
                 case "noMute":
                     music(false)
+                    break
+                case "carSelection":
+                    carSelectionAction()
                     break
                 case "add5Lifes":
                     addBoughtLifes(5);
@@ -436,6 +442,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(settingsNode!)
         if music {settingsNode?.noMute()}
         else {settingsNode?.mute()}
+    }
+    
+    func setupCarSelection() {
+        carSelectionNode = CarSelectionNode()
+        addChild(carSelectionNode!)
     }
     
     func setupStore() {
@@ -742,6 +753,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.gameStart!.show()
             inSettings = false
         }
+        else if inCarSelection {
+            carSelectionNode!.hide()
+            self.settingsNode?.show()
+            inCarSelection = false
+            inSettings = true
+        }
         else if inStore {
             storeNode?.hide()
             self.gameStart?.show()
@@ -754,6 +771,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if shieldUp {turnOffShieldProtection()}
             else if shotGunUp {turnOffShotGun()}
         }
+    }
+    
+    func carSelectionAction() {
+        inCarSelection = true
+        self.settingsNode?.hide()
+        inSettings = false
+        self.carSelectionNode?.show()
     }
     
 }
