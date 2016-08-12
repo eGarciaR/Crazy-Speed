@@ -13,6 +13,7 @@ class SettingsNode: SKNode {
     var settingsNode : SKSpriteNode!
     var btnMute : SKSpriteNode!
     var btnNoMute : SKSpriteNode!
+    var btnCarSelect : SKSpriteNode!
     
     override init() {
         super.init()
@@ -38,7 +39,7 @@ class SettingsNode: SKNode {
         
         btnMute = SKSpriteNode(imageNamed: "mute")
         btnMute.name = "mute"
-        btnMute.position = CGPointMake(0, 0)
+        btnMute.position = CGPointMake(-100, 0)
         btnMute.setScale(1.2)
         btnMute.zPosition = 7
         btnMute.hidden = true
@@ -46,11 +47,19 @@ class SettingsNode: SKNode {
         
         btnNoMute = SKSpriteNode(imageNamed: "noMute")
         btnNoMute.name = "noMute"
-        btnNoMute.position = CGPointMake(0, 0)
+        btnNoMute.position = CGPointMake(-100, 0)
         btnNoMute.setScale(1.2)
         btnNoMute.zPosition = 7
         btnNoMute.hidden = false
         settingsNode.addChild(btnNoMute)
+        
+        btnCarSelect = SKSpriteNode(imageNamed: "carSelection")
+        btnCarSelect.name = "carSelection"
+        btnCarSelect.position = CGPointMake(100, 0)
+        btnCarSelect.setScale(1.2)
+        btnCarSelect.zPosition = 7
+        settingsNode.addChild(btnCarSelect)
+        
         
         hidden = true
     }

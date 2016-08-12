@@ -32,7 +32,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var gameStart : GameStartNode?
     var gameOver : GameOverNode?
     var pauseMenu : PauseMenuNode?
-    var progress : ProgressNode?
     var bullet : BulletNode?
     var transparentPauseNode : TransparentPauseNode?
     var shieldNode : ShieldBoosterNode?
@@ -70,7 +69,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.physicsWorld.gravity = CGVectorMake(0.0, 0.0) // Gravedad zero
         self.physicsWorld.contactDelegate = self
         
-        totalAvailablePositions = [size.width*0.2, size.width*0.357, size.width*0.5, size.width*0.667, size.width*0.8]
+        totalAvailablePositions = [size.width*0.2, size.width*0.357, size.width*0.5, size.width*0.667, size.width*0.81]
         
         loadGameData()
         
@@ -84,7 +83,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         setupBoosters()
         setupSettings()
         setupStore()
-        setupProgress()
         setupSounds()
         setupTransparentPauseNode()
         setupShieldNode()
@@ -206,12 +204,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func didSimulatePhysics() {
         self.enumerateChildNodesWithName("otherCar", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
-            if node.position.y + node.frame.size.height < 0 {
-                node.removeFromParent()
-            }
-            
-        })
-        self.enumerateChildNodesWithName("ambulance", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
             if node.position.y + node.frame.size.height < 0 {
                 node.removeFromParent()
             }
@@ -451,15 +443,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(storeNode!)
     }
     
-    func setupProgress(){
-        progress = ProgressNode()
-        progress?.radius = 40.0
-        progress?.width = 8.0
-        progress?.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
-        progress?.hidden = true
-        addChild(progress!)
-    }
-    
     func setupShieldProtection() {
         car!.activateShield()
         shieldUp = true
@@ -633,9 +616,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.enumerateChildNodesWithName("otherCar", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
             node.removeFromParent()
         })
-        self.enumerateChildNodesWithName("ambulance", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
-            node.removeFromParent()
-        })
         self.enumerateChildNodesWithName("bullet", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
             node.removeFromParent()
         })
@@ -651,9 +631,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         saveGameData()
         
         self.enumerateChildNodesWithName("otherCar", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
-            node.removeFromParent()
-        })
-        self.enumerateChildNodesWithName("ambulance", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
             node.removeFromParent()
         })
         self.enumerateChildNodesWithName("bullet", usingBlock: { (node:SKNode, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
@@ -714,16 +691,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             qShotGun = 5
             music = true
             saveGameData()
-        }
-    }
-    
-    func loadProgress(){
-        self.physicsWorld.speed = 0.0
-        progress?.hidden = false
-        progress?.countdown(3.0) { () -> Void in
-            self.progress?.hidden = true
-            self.physicsWorld.speed = 1.0
-            self.isStarted = true
         }
     }
     

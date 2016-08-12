@@ -20,12 +20,8 @@ class OtherCarNode: SKSpriteNode {
             self.zRotation = CGFloat(M_PI)
         }
         
-        if image == 6 {
-            self.name = "ambulance"
-        }
-        else {
-            self.name = "otherCar"
-        }
+        self.name = "otherCar"
+
         
         if UIScreen.mainScreen().bounds.width <= 420 {self.setScale(0.35)}
         else {self.setScale(0.5)}

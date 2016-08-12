@@ -40,6 +40,7 @@
 		2B44CAF61BAC56E400751768 /* load.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B44CAF31BAC56E400751768 /* load.png */; };
 		2B44CAF71BAC56E400751768 /* bolt.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B44CAF41BAC56E400751768 /* bolt.png */; };
 		2B44CAF81BAC56E400751768 /* shop.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B44CAF51BAC56E400751768 /* shop.png */; };
+		2B49FFFC1D5DB9B500BBFDF5 /* carSelection.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B49FFFB1D5DB9B500BBFDF5 /* carSelection.png */; };
 		2B5541C21B949B510078DA09 /* beetle.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B5541C11B949B510078DA09 /* beetle.png */; };
 		2B5541D01B94B96A0078DA09 /* bg1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B5541CF1B94B96A0078DA09 /* bg1.png */; };
 		2B5F2D7B1BA2DDC900F436C1 /* icon_app_store.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B5F2D781BA2DDC900F436C1 /* icon_app_store.png */; };
@@ -60,7 +61,6 @@
 		2B7989571BB005D700E3219A /* BackgroundNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7989561BB005D700E3219A /* BackgroundNode.swift */; };
 		2B7989591BB015F600E3219A /* LabelsNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7989581BB015F600E3219A /* LabelsNode.swift */; };
 		2B79895B1BB0392500E3219A /* ButtonShopNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B79895A1BB0392500E3219A /* ButtonShopNode.swift */; };
-		2B9B9ED21BB584DF0081556B /* ProgressNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9B9ED11BB584DF0081556B /* ProgressNode.swift */; };
 		2B9E18361B909A0A00F7F9D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9E18351B909A0A00F7F9D3 /* AppDelegate.swift */; };
 		2B9E183A1B909A0A00F7F9D3 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9E18391B909A0A00F7F9D3 /* GameScene.swift */; };
 		2B9E183C1B909A0A00F7F9D3 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9E183B1B909A0A00F7F9D3 /* GameViewController.swift */; };
@@ -117,6 +117,7 @@
 		2B44CAF31BAC56E400751768 /* load.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = load.png; sourceTree = "<group>"; };
 		2B44CAF41BAC56E400751768 /* bolt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bolt.png; sourceTree = "<group>"; };
 		2B44CAF51BAC56E400751768 /* shop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shop.png; sourceTree = "<group>"; };
+		2B49FFFB1D5DB9B500BBFDF5 /* carSelection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carSelection.png; sourceTree = "<group>"; };
 		2B5541C11B949B510078DA09 /* beetle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beetle.png; sourceTree = "<group>"; };
 		2B5541CF1B94B96A0078DA09 /* bg1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg1.png; sourceTree = "<group>"; };
 		2B5F2D781BA2DDC900F436C1 /* icon_app_store.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_app_store.png; sourceTree = "<group>"; };
@@ -137,7 +138,6 @@
 		2B7989561BB005D700E3219A /* BackgroundNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundNode.swift; sourceTree = "<group>"; };
 		2B7989581BB015F600E3219A /* LabelsNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelsNode.swift; sourceTree = "<group>"; };
 		2B79895A1BB0392500E3219A /* ButtonShopNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonShopNode.swift; sourceTree = "<group>"; };
-		2B9B9ED11BB584DF0081556B /* ProgressNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressNode.swift; sourceTree = "<group>"; };
 		2B9E18321B909A0A00F7F9D3 /* Crazy Speed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crazy Speed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B9E18351B909A0A00F7F9D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B9E18391B909A0A00F7F9D3 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -220,6 +220,7 @@
 				276EBB501C878D14008C96F8 /* bullet_black.png */,
 				276EBB541C87A85A008C96F8 /* bullet.png */,
 				2B9E18521B90C33300F7F9D3 /* car.png */,
+				2B49FFFB1D5DB9B500BBFDF5 /* carSelection.png */,
 				2BFABC301D5CDE9A00F5F48C /* formula1.png */,
 				2B760B471D5C90EF008439D5 /* furgoneta.png */,
 				27C62B0F1C9820CA009DEB58 /* heart5Lifes.png */,
@@ -285,7 +286,6 @@
 				2BCFABC11BB2F22E00B28D37 /* OtherCarNode.swift */,
 				2BB534A41BB1BB0400374E2A /* GameStartNode.swift */,
 				2BB534A61BB1BB1B00374E2A /* GameOverNode.swift */,
-				2B9B9ED11BB584DF0081556B /* ProgressNode.swift */,
 				272F11491C89965600A2AA2E /* TransparentPauseNode.swift */,
 				27321ED91C8AF8B7003D2A6F /* ShieldBoosterNode.swift */,
 				27321EDB1C8AFDB4003D2A6F /* ShotGunBoosterNode.swift */,
@@ -378,6 +378,7 @@
 				27345FBE1C8C33B9002413A0 /* settings.png in Resources */,
 				2BFABC2F1D5CDCEE00F5F48C /* taxi.png in Resources */,
 				2726A8E21B98FE3D00C4D522 /* spark.png in Resources */,
+				2B49FFFC1D5DB9B500BBFDF5 /* carSelection.png in Resources */,
 				2B760B361D5C776A008439D5 /* viper.png in Resources */,
 				2B44CAF21BAC56D700751768 /* play.png in Resources */,
 				273FC4C81C9960B500E45E3B /* shots20.png in Resources */,
@@ -436,7 +437,6 @@
 				27318A7B1C90E02400676F98 /* StoreNode.swift in Sources */,
 				2BCFABC21BB2F22E00B28D37 /* OtherCarNode.swift in Sources */,
 				27321EDA1C8AF8B7003D2A6F /* ShieldBoosterNode.swift in Sources */,
-				2B9B9ED21BB584DF0081556B /* ProgressNode.swift in Sources */,
 				2B9E183C1B909A0A00F7F9D3 /* GameViewController.swift in Sources */,
 				276EBB531C878D3D008C96F8 /* BulletNode.swift in Sources */,
 				27321EDC1C8AFDB4003D2A6F /* ShotGunBoosterNode.swift in Sources */,
@@ -558,7 +558,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Crazy Speed/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fergargames.crazyspeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -574,7 +574,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Crazy Speed/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fergargames.crazyspeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
